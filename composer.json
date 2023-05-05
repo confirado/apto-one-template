@@ -1,5 +1,6 @@
 {
     "name": "apto-one/template",
+    "version": "2.1.0",
     "repositories": {
         "apto-one-core": {
           "type": "vcs",
@@ -14,7 +15,7 @@
         "php": ">=7.4.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "apto-one/core": "dev-main",
+        "apto-one/core": "2.1.0",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.5",
         "doctrine/doctrine-migrations-bundle": "^3.2",

@@ -51,7 +51,3 @@ ENV APACHE_RUN_GROUP=apto
 # change user
 WORKDIR /var/www/html
 USER apto
-
-# install ssh key
-COPY --chown=apto:apto docker/apache/ssh.zip /home/apto/ssh.zip
-RUN cd /home/apto && unzip ssh.zip

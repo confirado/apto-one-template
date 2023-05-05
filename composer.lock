@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1c06c67fb7c0fbf435ea72582fdb50b",
+    "content-hash": "41cc55d1774aeafef0a751fc468b8324",
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "dev-main",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "f1b2370cb2270741fee6d5139431f63e5e5020bb"
+                "reference": "67e87219f28930246a327a609bb1a51eb6bb58c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/f1b2370cb2270741fee6d5139431f63e5e5020bb",
-                "reference": "f1b2370cb2270741fee6d5139431f63e5e5020bb",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/67e87219f28930246a327a609bb1a51eb6bb58c5",
+                "reference": "67e87219f28930246a327a609bb1a51eb6bb58c5",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,6 @@
                 "ramsey/uuid": "^4.2",
                 "scienta/doctrine-json-functions": "~5.0.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -36,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/main",
+                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.0",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-05-05T14:38:01+00:00"
+            "time": "2023-05-05T16:29:39+00:00"
         },
         {
             "name": "brick/math",
@@ -9827,9 +9826,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "apto-one/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

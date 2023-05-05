@@ -5,7 +5,7 @@ SCRIPT_DIRECTORY="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 cd ${SCRIPT_DIRECTORY}
 cd ../..
 
-composer update apto/* apto-plugin/*
+composer update apto-one/core
 
 # update database
 php bin/console doctrine:schema:validate
