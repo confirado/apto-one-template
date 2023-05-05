@@ -1,4 +1,4 @@
-<p align='center'><a align="center" href="https://apto.one/" target="_blank" rel="noopener noreferrer">
+<p style='text-align: center;'><a href="https://apto.one/" target="_blank" rel="noopener noreferrer">
     <img width="250" src="https://www.confirado.de/files/images/confirado/logos/Apto.ONE/logo_apto_blau_gr%C3%BCn.png">
 </a></p>
 
