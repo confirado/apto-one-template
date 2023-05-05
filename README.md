@@ -1,6 +1,8 @@
-# Apto.ONE Version 2.1
+<p align='center'><a align="center" href="https://apto.one/" target="_blank" rel="noopener noreferrer">
+    <img width="250" src="https://www.confirado.de/files/images/confirado/logos/Apto.ONE/logo_apto_blau_gr%C3%BCn.png">
+</a></p>
 
-Apto.ONE version 2.1 is build up of the following components:
+## Apto.ONE is build up of the following components:
 
 - Backend (PHP + Symfony)
 - Administration Frontend (AngularJS, AngularJS Material)
