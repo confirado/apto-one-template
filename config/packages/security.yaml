@@ -1,0 +1,103 @@
+security:
+    enable_authenticator_manager: true
+
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    password_hashers:
+        Apto\Base\Infrastructure\AptoBaseBundle\Security\User\User:
+            id: Apto\Base\Infrastructure\AptoBaseBundle\Security\Encoder\PasswordEncoder
+        Apto\Base\Infrastructure\AptoBaseBundle\Security\FrontendUser\FrontendUser:
+            id: Apto\Base\Infrastructure\AptoBaseBundle\Security\Encoder\PasswordEncoder
+
+    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+    providers:
+        backend_users:
+            id: Apto\Base\Infrastructure\AptoBaseBundle\Security\User\UserProvider
+        frontend_users:
+            id: Apto\Base\Infrastructure\AptoBaseBundle\Security\FrontendUser\FrontendUserProvider
+
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: ROLE_USER
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        ##main:
+        #    lazy: true
+        #    provider: users_in_memory
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#the-firewall
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+        backend:
+            pattern: ^/backend
+            methods: [ GET, HEAD, POST, PUT, DELETE, CONNECT, TRACE, PATCH ]
+            form_login:
+                provider: backend_users
+                enable_csrf: true
+                login_path: /backend/login
+                check_path: /backend/login
+                default_target_path: /backend
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path: /backend
+                # by default, the feature is enabled by checking a
+                # checkbox in the login form (see below), uncomment the
+                # following line to always enable it.
+                # always_remember_me: true
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+            logout:
+                path: /backend/logout
+                target: /backend/login
+        api:
+            provider: backend_users
+            pattern: ^/api
+            methods: [ GET, HEAD, POST, PUT, DELETE, CONNECT, TRACE, PATCH ]
+            stateless: true
+            guard:
+                authenticators:
+                    - Apto\Base\Infrastructure\AptoBaseBundle\Security\Guard\TokenAuthenticator
+        # api is not for public use in production, this is only for development to be able to use build in angular server!!!
+        # @todo we need a OAuth approach for that use case
+        api_options:
+            pattern: ^/api
+            methods: [ OPTIONS ]
+            security: false
+        frontend:
+            provider: frontend_users
+            pattern: ^/
+            json_login:
+                check_path: /login
+            logout:
+                path: /logout
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/backend/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api, role: ROLE_API }
+        - { path: ^/backend, role: ROLE_USER }
+        - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+when@test:
+    security:
+        password_hashers:
+            # By default, password hashers are resource intensive and take time. This is
+            # important to generate secure password hashes. In tests however, secure hashes
+            # are not important, waste resources and increase test times. The following
+            # reduces the work factor to the lowest possible values.
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4 # Lowest possible value for bcrypt
+                time_cost: 3 # Lowest possible value for argon
+                memory_cost: 10 # Lowest possible value for argon

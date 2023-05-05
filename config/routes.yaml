@@ -1,0 +1,3 @@
+apto_base_bundle:
+    resource: '@AptoBaseBundle/Resources/config/routing/'
+    type: directory

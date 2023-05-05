@@ -1,0 +1,16 @@
+language in core
+router resolve data (configuration, shop context, productlist?)
+
+render images
+- query der perspektiven die ein renderimage enthalten zurückgibt
+- beim laden einer perspektive werden nach dem die aktuelle geladen wurde die restlichen im hintergrund vorgeladen
+
+
+
+
+Mir geht grad was durch den Kopf worüber wir uns mal Gedanken machen sollten.
+Beispiel MDR und PricePerUnit Element.
+In der aktuellen Version ist das Element durch die erweiterte Preisberechnung nicht mehr notwendig. Ich würde das Element also beim Update auf 2.1 entfernen.
+Entfernen heißt aus den BasePlugins reusnehmen. Nun machen wir ein Update bei MDR und dieser benutzt den Elementtypen sehr häufig. Hat zudem noch viele Produkte so das das Element mal nicht einfach so ausgetauscht werden kann.
+Wie gehen wir in so einem Fall vor? Müssen wir ein MigrationScript schreiben? Wir könnten das Element als eigeneständiges Plugin weiter einsetzen aber es muss dazu halt geupdatet werden.
+

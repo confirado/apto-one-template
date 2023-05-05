@@ -1,0 +1,317 @@
+@import "globals";
+@import "common";
+
+@mixin element-grid($screen-size: 'mobile') {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+            "header"
+            "picture"
+            "element"
+            "description"
+            "buttons";
+    padding: var(--element-gap);
+    justify-items: center;
+    gap: 0;
+    column-gap: 20px;
+    position: relative;
+
+    @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+        grid-template-areas:
+            "picture header"
+            "picture description"
+            "picture element"
+            "picture buttons";
+
+        grid-template-columns: calc(var(--image-tablet-width) + 2*var(--element-gap)) 1fr;
+        justify-items: flex-start;
+    }
+
+    &.step-by-step:not(.open-in-dialog) {
+        padding: var(--element-gap);
+    }
+
+    &.step-by-step.open-in-dialog,
+    &.one-page.open-in-dialog, {
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-radius: var(--border-radius-card);
+        padding: 34px 72px;
+    }
+
+    // in one page we dont need padding, as the padding is given from parent element
+    &.one-page:not(.open-in-dialog) {
+        padding: 0;
+
+        .header {
+            display: none;
+        }
+
+        @if ($screen-size == 'mobile') {
+            grid-template-areas:
+                    "picture"
+                    "element"
+                    "description"
+                    "buttons";
+        }
+
+        @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+            grid-template-areas:
+                    "picture description"
+                    "picture element"
+                    "picture buttons";
+
+            grid-template-columns: calc(var(--image-one-page-width) + 2*var(--element-gap)) 1fr;
+        }
+    }
+}
+
+@mixin element-margins($screen-size: 'mobile') {
+    .header + .picture:not(:empty),
+    .picture + .element:not(:empty),
+    .element + .description:not(:empty),
+    .apply-button {
+        margin-top: var(--element-gap);
+    }
+
+    @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+        .header + .picture:not(:empty) {
+            margin-top: 0;
+        }
+    }
+}
+
+@mixin element-content-grid($screen-size: 'mobile') {
+    grid-area: element;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+    grid-template-areas:
+                "picture"
+                "element";
+    justify-items: center;
+    width: 100%;
+}
+
+@mixin element-content-margins($screen-size: 'mobile') {
+    .picture + .element:not(:empty) {
+        margin-top: var(--element-gap);
+    }
+}
+
+@mixin element-input-grid($screen-size: 'mobile', $width: false) {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "prefix input suffix"
+        "... hint ...";
+    width: 100%;
+
+    @if($screen-size == 'mobile') {
+        @if($width == false) {
+            grid-template-columns: 1fr var(--input-mobile-width) 1fr;
+        }
+
+        @if($width != false) {
+            grid-template-columns: 1fr #{$width} 1fr;
+        }
+    }
+
+    @if($screen-size == 'tablet' or $screen-size == 'desktop') {
+        @if($width == false) {
+            grid-template-columns: 1fr var(--input-tablet-width) 1fr;
+        }
+
+        @if($width != false) {
+            grid-template-columns: 1fr #{$width} 1fr;
+        }
+    }
+}
+
+
+@mixin headline($screen-size: 'mobile') {
+    display: grid;
+    gap: var(--element-gap);
+    margin-bottom: 50px;
+
+    h2 {
+        grid-area: title;
+        color: var(--color-text);
+        margin: 0;
+    }
+
+    .image {
+        grid-area: image;
+    }
+
+    @if ($screen-size == 'mobile') {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        grid-template-areas:
+            "title"
+            "image"
+            "description";
+
+        .image {
+            width: var(--image-mobile-width);
+        }
+
+        h2 {
+            font-size: 29px;
+            font-weight: 600;
+        }
+    }
+
+    @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+        .image {
+            width: var(--image-tablet-width);
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        grid-template-areas:
+            "title image"
+            "description image";
+        justify-content: space-between;
+        justify-items: flex-start;
+    }
+
+    .description {
+        grid-area: description;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--color-text);
+    }
+}
+
+
+@mixin header($screen-size: 'mobile') {
+    display: flex;
+
+    @if ($screen-size == 'mobile') {
+        justify-content: center;
+    }
+
+    @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@mixin title($screen-size: 'mobile') {
+    @if ($screen-size == 'mobile') {
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--color-text);
+                text-align: center;
+            }
+        }
+    }
+
+    @if ($screen-size == 'tablet') {
+        .title {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: row;
+
+            h4 {
+                text-align: left;
+            }
+        }
+    }
+}
+
+@mixin picture($screen-size: 'mobile') {
+    @if ($screen-size == 'mobile') {
+        width: calc(var(--image-mobile-width) + 2*var(--element-gap));
+    }
+
+    @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+        width: calc(var(--image-tablet-width) + 2*var(--element-gap));
+    }
+}
+
+@mixin element($screen-size: 'mobile') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@mixin description($screen-size: 'mobile') {
+    word-break: break-word;
+    text-align: center;
+
+    @media only screen and (min-width: $mobile-max-width) {
+        text-align: left;
+    }
+}
+
+@mixin buttons($screen-size: 'mobile') {
+    display: flex;
+    flex-direction: column;
+    gap: var(--button-gap);
+
+    @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
+        justify-self: flex-end;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
+@mixin circle-checkbox ($size: 25px, $position: 'outer'){
+    border: 2px solid var(--color-border-selected);
+    border-radius: var(--border-radius-bubble);
+    height: $size;
+    width: $size;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    mat-icon {
+        display: none;
+        text-align: center;
+        height: calc($size - 5px);
+        width: calc($size - 5px);
+        overflow: hidden;
+        line-height: calc($size - 5px);
+        font-size: calc($size - 5px);
+    }
+
+    @if ($position == 'inner') {
+        top: 20px;
+        right: 20px;
+    }
+
+    @if ($position == 'outer') {
+        top: calc(-1*($size/2 - 2px));
+        right: calc(-1*($size/2 - 2px));
+    }
+
+    @if ($position == 'cenetr') {
+        top: 0;
+        right: 0;
+    }
+
+    &.selected {
+        background-color: var(--color-border-selected);
+
+        mat-icon {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+parameters:
+    sa_hash: '%env(SA_HASH)%'
+    default_permission: 0755
+    default_product: 'fenster-one-page'
+    image_manipulation: ''
+    image_renderer_use_cache: true
+    perspectives:
+        default: persp1
+        perspectives:
+            - persp1
+            - persp2
+            - persp3
+            - persp4
+        basketPerspectives:
+            - persp1
+    mailer_transports:
+        master: '%env(MAILER_DSN)%'
+
+imports:
+    - { resource: parameters-request-form.yaml }

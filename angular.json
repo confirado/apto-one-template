@@ -1,0 +1,392 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "apps",
+  "projects": {
+    "backend": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/backend",
+      "sourceRoot": "apps/backend/src",
+      "prefix": "apto",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/backend",
+            "index": "apps/backend/src/index.html",
+            "main": "apps/backend/src/main.ts",
+            "polyfills": "apps/backend/src/polyfills.ts",
+            "tsConfig": "apps/backend/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/backend/src/favicon.ico",
+              "apps/backend/src/assets"
+            ],
+            "styles": [
+              "apps/backend/src/styles.scss"
+            ],
+            "scripts": [],
+            "fileReplacements": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/backend/src/assets/sass",
+                "apps/frontend/src/assets/sass/mixins"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "outputPath": "web/public/dist/backend/prod/apto/local",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/src/environments/environment.ts",
+                  "with": "apps/backend/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "outputPath": "web/public/dist/backend/dev/apto/local",
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "backend:build:production"
+            },
+            "development": {
+              "browserTarget": "backend:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "backend:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/backend/src/test.ts",
+            "polyfills": "apps/backend/src/polyfills.ts",
+            "tsConfig": "apps/backend/tsconfig.spec.json",
+            "karmaConfig": "apps/backend/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/backend/src/favicon.ico",
+              "apps/backend/src/assets"
+            ],
+            "styles": [
+              "apps/backend/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "frontend": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/frontend",
+      "sourceRoot": "apps/frontend/src",
+      "prefix": "apto",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/frontend",
+            "index": "apps/frontend/src/index.html",
+            "main": "apps/frontend/src/main.ts",
+            "polyfills": "apps/frontend/src/polyfills.ts",
+            "tsConfig": "apps/frontend/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/frontend/src/favicon.ico",
+              "apps/frontend/src/assets"
+            ],
+            "styles": [
+              "apps/frontend/src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/frontend/src/assets/sass",
+                "apps/frontend/src/assets/sass/mixins"
+              ]
+            },
+            "scripts": [],
+            "fileReplacements": []
+          },
+          "configurations": {
+            "production": {
+              "outputPath": "web/public/dist/frontend/prod/apto/local",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/frontend/src/environments/environment.ts",
+                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "outputPath": "web/public/dist/frontend/dev/apto/local",
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
+            "live": {
+              "outputPath": "web/public/dist/frontend/prod/apto/live",
+              "fileReplacements": [
+                {
+                  "replace": "apps/frontend/src/environments/environment.ts",
+                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "apps-build/parameters/local.ts",
+                  "with": "apps-build/parameters/live.ts"
+                }
+              ]
+            },
+            "live-dev": {
+              "outputPath": "web/public/dist/frontend/dev/apto/live",
+              "fileReplacements": [
+                {
+                  "replace": "apps-build/parameters/local.ts",
+                  "with": "apps-build/parameters/live.ts"
+                }
+              ]
+            },
+            "staging": {
+              "outputPath": "web/public/dist/frontend/prod/apto/staging",
+              "fileReplacements": [
+                {
+                  "replace": "apps/frontend/src/environments/environment.ts",
+                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "apps-build/parameters/local.ts",
+                  "with": "apps-build/parameters/staging.ts"
+                }
+              ]
+            },
+            "staging-dev": {
+              "outputPath": "web/public/dist/frontend/dev/apto/staging",
+              "fileReplacements": [
+                {
+                  "replace": "apps-build/parameters/local.ts",
+                  "with": "apps-build/parameters/staging.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "frontend:build:production"
+            },
+            "development": {
+              "browserTarget": "frontend:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "frontend:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/frontend/src/test.ts",
+            "polyfills": "apps/frontend/src/polyfills.ts",
+            "tsConfig": "apps/frontend/tsconfig.spec.json",
+            "karmaConfig": "apps/frontend/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/frontend/src/favicon.ico",
+              "apps/frontend/src/assets"
+            ],
+            "styles": [
+              "apps/frontend/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "install": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "apps/install",
+      "sourceRoot": "apps/install/src",
+      "prefix": "apto",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/install",
+            "index": "apps/install/src/index.html",
+            "main": "apps/install/src/main.ts",
+            "polyfills": "apps/install/src/polyfills.ts",
+            "tsConfig": "apps/install/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/install/src/favicon.ico",
+              "apps/install/src/assets"
+            ],
+            "styles": [
+              "apps/install/src/theme.scss",
+              "apps/install/src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/install/src/assets/sass",
+                "apps/install/src/assets/sass/mixins"
+              ]
+            },
+            "scripts": [],
+            "fileReplacements": []
+          },
+          "configurations": {
+            "production": {
+              "outputPath": "web/public/dist/install/prod/apto/live",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/install/src/environments/environment.ts",
+                  "with": "apps/install/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "outputPath": "web/public/dist/install/dev/apto/live",
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "install:build:production"
+            },
+            "development": {
+              "browserTarget": "install:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "install:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/install/src/test.ts",
+            "polyfills": "apps/install/src/polyfills.ts",
+            "tsConfig": "apps/install/tsconfig.spec.json",
+            "karmaConfig": "apps/install/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/install/src/favicon.ico",
+              "apps/install/src/assets"
+            ],
+            "styles": [
+              "apps/install/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "frontend",
+  "cli": {
+    "analytics": false
+  }
+}

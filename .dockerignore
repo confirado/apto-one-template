@@ -1,0 +1,14 @@
+.DS_Store
+.angular
+.editorconfig
+.eslintrc.json
+.git
+.gitignore
+.idea
+.prettierrc.json
+_client-deprecated_
+_gitignore_
+node_modules
+apps
+apps-build
+var

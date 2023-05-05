@@ -1,0 +1,6 @@
+// these variables can not be brought to css variables under :root, as they are not yet working from media queries
+$layout-max-width: 1440px;
+
+$desktop-max-width: 1280px;
+$tablet-max-width: 1023px;
+$mobile-max-width: 767px;

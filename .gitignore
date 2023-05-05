@@ -1,52 +1,100 @@
-# Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
+###> confirado default ###
+# mac
+.DS_Store
 
-# Email spool folder
-/app/spool/*
+# ide
+/.settings/
+/.buildpath
+/.project
+/nbproject/
+.idea
 
-# Cache, session files and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-/var/sessions/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/sessions/.gitkeep
+# ubutu things
+/ubuntu*.log
+###< confirado default ###
 
-# Logs (Symfony4)
-/var/log/*
-!var/log/.gitkeep
-
-# Parameters
-/app/config/parameters.yml
-/app/config/parameters.ini
-
-# Managed by Composer
-/app/bootstrap.php.cache
-/var/bootstrap.php.cache
-/bin/*
-!bin/console
-!bin/symfony_requirements
-/vendor/
-
-# Assets and user uploads
+###> symfony/framework-bundle ###
+/.env.docker
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
 /web/bundles/
-/web/uploads/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
 
-# PHPUnit
-/app/phpunit.xml
-/phpunit.xml
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/web/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
 
-# Build data
-/build/
+###> apto default ignores ###
+# composer
+/composer
 
-# Composer PHAR
-/composer.phar
+# npm
+.npm
+/package-lock.json
 
-# Backup entities generated with doctrine:generate:entities command
-**/Entity/*~
+# angular
+/.angular
 
-# Embedded web-server pid file
-/.web-server-pid
+# src
+/src/*
+!/src/Apto/
+
+# config
+/config/parameters.yaml
+/config/parameters-request-form.yaml
+
+# apps build
+/apps-build/tmp/*
+!/apps-build/tmp/.gitkeep
+/apps-build/parameters/*
+!/apps-build/parameters/live.ts
+!/apps-build/parameters/staging.ts
+
+# web
+/web/.htaccess
+/web/.htpasswd
+/web/php.ini
+/web/public/media/*
+!/web/public/media/.gitkeep
+/web/public/thumbs/*
+!/web/public/thumbs/.gitkeep
+/web/public/cache/*
+!/web/public/cache/.gitkeep
+/web/public/dist/*/*/*/local*/*
+
+# import
+/import/*
+!/import/.gitkeep
+
+# release
+/bin/release/tmp/*
+!/bin/release/tmp/*.gitkeep
+
+###< apto default ignores ###
+
+
+###> dev migration ###
+/oldbundles/*
+###< dev migration ###
+
+###> client deprecated ###
+/_client-deprecated_/node_modules/
+/_client-deprecated_/src-tmp/*
+/_client-deprecated_/package-lock.json
+/_client-deprecated_/_only_needed_for_versions_composer.lock
+
+/_client-deprecated_/client/config/*
+!/_client-deprecated_/client/config/apto.js
+!/_client-deprecated_/client/config/custom.example.js
+!/_client-deprecated_/client/config/staging.js
+!/_client-deprecated_/client/config/live.js
+/_client-deprecated_/client/tmp/*
+!/_client-deprecated_/client/tmp/.gitkeep
+###< client deprecated ###

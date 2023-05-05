@@ -1,0 +1,49 @@
+:host {
+    display: block;
+    opacity: 0.87;
+    margin: 0 auto;
+    max-width: 1024px;
+    position: relative;
+    top: 20%;
+}
+
+form {
+    margin-top: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+}
+
+mat-form-field {
+    display: block;
+    width: 100%;
+}
+
+.step-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        margin-left: 16px;
+    }
+}
+
+.spinner-installation-step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.installation-finish {
+    text-align: center;
+}
+
+.installation-finish-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}

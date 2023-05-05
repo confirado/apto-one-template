@@ -1,0 +1,188 @@
+@import "globals";
+@import "form-inputs";
+@import 'mat_overwrite';
+@import './fonts.scss';
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+
+:root {
+    --main-font-1: 'Montserrat', sans-serif;
+
+    --primary-lighter: #80befa;
+    --primary: #2690f7;
+    --primary-darker: #2b3d6f;
+    --primary-dark: #051b56;
+
+    --color-primary: #21548c;
+    --color-accent: #e7e6eb;
+    --color-accent-contrast: #595959;
+    --color-details: #f2f2f2;
+    --color-warn: #dd6e67;
+    --color-title: #595959;
+    --color-text: #595959;
+    --color-info-text: #9d9d9d;
+    --color-optic-lines: #7897b9;
+
+    --color-optic-lines-popup-light: #BBCFF6;
+    --color-optic-lines-popup: #5587E8;
+    --color-optic-lines-popup-warning-light: #FBF3C7;
+    --color-optic-lines-popup-warning: #F4E070;
+    --color-optic-lines-popup-error-light: #F2C6C3;
+    --color-optic-lines-popup-error: #DD6E67;
+
+    --color-completed: #79ba92;
+    --color-background: #f7f8fa;
+    --color-background-card: white;
+    --color-background-header: white;
+    --color-background-footer: #e7e6eb;
+    --color-background-sidebar: white;
+    --color-background-completed: #e5f6ee;
+    --color-background-image: #e9e9eb;
+    --color-border-outline: #595959;
+    --color-border-dimensions: #707070;
+    --color-border-selected: #595959;
+    --color-border-input: #d6d6d6;
+    --color-border: #dddddd;
+    --color-ripple-control: #898989;
+
+    --box-shadow: rgba(117, 117, 117, 0.15) 0px 5px 15px 0px !important;
+    --box-shadow-strong: rgba(117, 117, 117, 0.4) 0px 0px 15px 0px;
+
+    --border-radius: 5px;
+    --border-radius-bubble: 50%;
+    --border-radius-card: 10px;
+    --border-radius-button: 10px;
+    --border-radius-links: 25px;
+    --selected-border: 3px solid var(--color-background-card);
+
+
+    //--side-space: 10vw;
+    --layout-max-with: 1440px;
+    --tablet-max-width: 1023px;
+    --mobile-max-width: 767px;
+
+    --element-gap: 20px;
+    --button-gap: 10px;
+    --input-elements-gap: 10px;
+    --input-height: 42px;
+    --input-big-height: 62px;
+    --input-icon-width: 26px;
+    --input-mobile-width: 200px;
+    --input-tablet-width: 250px;
+
+    --image-mobile-width: 140px;
+    --image-tablet-width: 114px;
+    --image-one-page-width: 100px;
+
+    --one-page-img-size: 100px;
+    --dropdown-icon-width: 36px;
+    --clear-icon-width: 40px;
+
+    --button-mobile-height: 46px;
+    --button-tablet-height: 55px;
+    --button-desktop-height: 62px;
+}
+
+html,
+body,
+app-root {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+    font-family: var(--main-font-1);
+    background-color: var(--color-background);
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+app-root {
+	display: flex;
+	flex-direction: column;
+}
+
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+.bg-primary-dark {
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+}
+
+.bg-primary-darker {
+    background-color: var(--primary-darker);
+    color: white;
+}
+
+.skeleton {
+	background: rgb(239, 241, 246) no-repeat;
+
+	border-radius: 4px;
+	height: 20px;
+	will-change: transform;
+	margin-right: 8px;
+
+	animation: pulse 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	animation-delay: 0.5s;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.active {
+	background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-background-image);
+	border-radius: var(--border-radius-button);
+}
+
+pre {
+    .prettify-pipe {
+        background: #2b2b2b;
+        color: #fff;
+        .string {
+            color: #527856;
+        }
+        .number {
+            color: #5396ba;
+        }
+        .boolean {
+            color: #cc7832;
+        }
+        .null {
+            color: #cc7832;
+        }
+        .key {
+            color: #9876aa;
+        }
+    }
+}
+
+@import "../../../templates/app/styles";

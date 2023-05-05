@@ -1,0 +1,3 @@
+kernel:
+    resource: ../../src/Apto/Kernel.php
+    type: annotation

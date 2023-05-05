@@ -1,0 +1,60 @@
+.logo h1 {
+  a {
+    width: @logoWith;
+    height: @logoHeight;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .step-by-step {
+    header.main {
+      .logo {
+        left: 0;
+
+        h1 {
+          margin: @logoMobileMargin;
+          height: @logoMobileHeight;
+
+          a {
+            width: @logoMobileWith;
+            height: @logoMobileHeight;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header.main {
+    .logo {
+      left: 0;
+
+      h1 {
+        margin: @logoMobileMargin;
+        height: @logoMobileHeight;
+
+        a {
+          width: @logoMobileWith;
+          height: @logoMobileHeight;
+        }
+      }
+    }
+  }
+
+  .step-by-step {
+    header.main {
+      .logo {
+        h1 {
+          margin: @logoMobileMargin;
+          height: @logoMobileHeight;
+
+          a {
+            width: @logoMobileWith;
+            height: @logoMobileHeight;
+          }
+        }
+      }
+    }
+  }
+}

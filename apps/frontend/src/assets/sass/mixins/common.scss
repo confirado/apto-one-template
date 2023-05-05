@@ -1,0 +1,27 @@
+@mixin cut-long-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin linear-gradient() {
+    background: linear-gradient(
+        to right,
+        #FABF5C,
+        #D6D55F,
+        #96F386,
+        #6ED6D7,
+        #70A4F7,
+        #AD5DF9);
+}
+
+@mixin blurry-background() {
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

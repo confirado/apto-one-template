@@ -1,0 +1,68 @@
+{
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"paths": ["**/src"],
+				"extensions": [".ts"]
+			},
+			"typescript": {}
+		}
+	},
+	"env": {
+		"es2021": true,
+		"browser": true,
+		"node": true
+	},
+	"extends": ["airbnb-base"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never"
+			}
+		],
+		"no-underscore-dangle": ["off"],
+		"max-len": ["error", 150],
+		"indent": ["off"],
+		"no-tabs": ["off"],
+		"import/prefer-default-export": ["off"],
+		"no-await-in-loop": ["off"],
+		"no-restricted-syntax": ["off"],
+		"no-unused-vars": ["off"],
+		"comma-dangle": [
+			"error",
+			{
+				"arrays": "always-multiline",
+				"objects": "always-multiline",
+				"imports": "always-multiline"
+			}
+		],
+		"no-param-reassign": ["off"],
+		"object-curly-newline": [
+			"error",
+			{
+				"ImportDeclaration": { "multiline": true }
+			}
+		],
+		"implicit-arrow-linebreak": ["off"],
+		"operator-linebreak": ["off"],
+		"no-useless-constructor": "off",
+		"@typescript-eslint/no-useless-constructor": ["error"],
+		"no-empty-function": "off",
+		"@typescript-eslint/no-empty-function": ["error"],
+		"class-methods-use-this": ["off"],
+		"function-paren-newline": ["off"],
+		"import/no-unresolved": ["off"],
+		"@typescript-eslint/explicit-function-return-type": ["error"],
+		"@typescript-eslint/explicit-member-accessibility": ["error"],
+		"no-confusing-arrow": ["off"],
+		"lines-between-class-members": ["off"]
+	}
+}

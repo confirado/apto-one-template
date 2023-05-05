@@ -1,0 +1,138 @@
+@mixin dialog-wrapper($screen-size: 'mobile') {
+    position: relative;
+    border-radius: var(--border-radius-card);
+    display: flex;
+    flex-direction: column;
+    border-top-width: 3px;
+    border-top-style: solid;
+
+    @if ($screen-size == 'mobile') {
+        padding: var(--element-gap);
+    }
+
+    @if ($screen-size == 'tablet') {
+        padding: 34px 72px;
+    }
+}
+
+@mixin mat-dialog-title() {
+    display: flex;
+    color: var(--color-text);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+@mixin mat-dialog-content($screen-size: 'mobile') {
+    display: flex;
+    flex-direction: column;
+    padding: var(--element-gap) 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+}
+
+@mixin dialog-icon() {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    mat-icon {
+        width: 72px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 100%;
+        font-size: 50px;
+
+        @include background-color();
+        @include color();
+    }
+}
+
+@mixin background-color($type: 'confirm') {
+    &[type="confirm"],
+    &[type="info"],
+    &[type="custom"] {
+        background-color: var(--color-optic-lines-popup-light);
+    }
+
+    &[type="error"] {
+        background-color: var(--color-optic-lines-popup-error-light);
+    }
+
+    &[type="warning"] {
+        background-color: var(--color-optic-lines-popup-warning-light);
+    }
+}
+
+@mixin border-color() {
+    &[type="confirm"],
+    &[type="info"],
+    &[type="custom"] {
+        border-color: var(--color-optic-lines-popup);
+    }
+
+    &[type="error"] {
+        border-color: var(--color-optic-lines-popup-error);
+    }
+
+    &[type="warning"] {
+        border-color: var(--color-optic-lines-popup-warning);
+    }
+}
+
+@mixin color() {
+    &[type="confirm"],
+    &[type="info"],
+    &[type="custom"] {
+        color: var(--color-optic-lines-popup);
+    }
+
+    &[type="error"] {
+        color: var(--color-optic-lines-popup-error);
+    }
+
+    &[type="warning"] {
+        color: var(--color-optic-lines-popup-warning);
+    }
+}
+
+@mixin mat-dialog-actions($screen-size: 'mobile') {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: var(--button-gap);
+    width: 100%;
+    padding: 0;
+    margin: calc(1.5*var(--element-gap)) 0 0 0;
+    flex-wrap: nowrap;
+
+    @if ($screen-size == 'mobile') {
+        flex-direction: column;
+    }
+
+    @if ($screen-size == 'tablet') {
+        flex-direction: row;
+    }
+}
+
+@mixin button($screen-size: 'mobile') {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @if ($screen-size == 'mobile') {
+        height: var(--button-mobile-height);
+    }
+
+    @if ($screen-size == 'tablet') {
+        height: var(--button-tablet-height);
+        max-width: 50%; // for the case when we have only 1 button
+    }
+}

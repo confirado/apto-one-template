@@ -1,0 +1,279 @@
+@import "common";
+
+@mixin input-host() {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin input-grid() {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: max-content auto max-content;
+    grid-template-areas:
+        "... name ..."
+        "prefix container suffix"
+        "... hint ...";
+}
+
+@mixin name() {
+    font-weight: 500;
+    height: min-content;
+    font-size: 18px;
+    color: var(--color-text);
+    padding-bottom: var(--input-elements-gap);
+}
+
+@mixin prefix() {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    align-self: center;
+    text-align: right;
+
+    &:not(:empty) {
+        padding-right: var(--input-elements-gap);
+    }
+}
+
+@mixin suffix() {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    align-self: center;
+    text-align: left;
+
+    &:not(:empty) {
+        padding-left: var(--input-elements-gap);
+    }
+}
+
+@mixin container($height: var(--input-height)) {
+    display: flex;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid var(--color-border-input);
+    border-radius: var(--border-radius-card);
+    height: $height;
+    box-shadow: var(--box-shadow);
+
+    &.open-left {
+        border-bottom-left-radius: 0;
+    }
+
+    &.open-right {
+        border-bottom-right-radius: 0;
+    }
+}
+
+@mixin hint() {
+    color: var(--color-text);
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: var(--input-elements-gap);
+}
+
+@mixin input() {
+    font-family: var(--main-font-1);
+    font-size: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    padding-right: var(--input-elements-gap);
+    padding-left: 20px;
+}
+
+@mixin textarea($screen-size: 'mobile') {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    padding: 5px 0;
+    font-family: var(--main-font-1);
+    font-size: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+    resize: vertical;
+
+    @if ($screen-size == 'mobile') {
+        width: calc(var(--input-mobile-width) - 30px);
+    }
+
+    @if ($screen-size == 'tablet') {
+        width: calc(var(--input-tablet-width) - 30px);
+    }
+}
+
+@mixin select() {
+    .select {
+        display: flex;
+        flex-grow: 1;
+        align-items: stretch;
+
+        .selected-value-wrapper {
+            display: flex;
+            align-items: center;
+            flex-basis: calc(100% - var(--dropdown-icon-width));
+            max-width: calc(100% - var(--dropdown-icon-width));
+
+            &.value-disabled {
+                cursor: pointer;
+            }
+
+            .selected-value {
+                width: 100%;
+                padding-left: 20px;
+                font-size: 15px;
+                font-weight: 600;
+                font-family: var(--main-font-1);
+                color: var(--color-text);
+                @include cut-long-text();
+            }
+        }
+
+        @include select-dropdown-icon();
+    }
+}
+
+@mixin clear-input() {
+    .clear-input {
+        background-color: var(--color-background);
+        border-left: 1px solid var(--color-border-input);
+        height: var(--input-height) - 2px;
+        width: var(--clear-icon-width);
+        flex-basis: var(--clear-icon-width);
+        min-width: var(--clear-icon-width);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        mat-icon {
+            color: var(--color-text);
+            font-size: 20px;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+        }
+    }
+}
+
+@mixin select-dropdown-icon() {
+    .dropdown {
+        height: calc(var(--input-height) - 2px);
+        width: var(--dropdown-icon-width);
+        cursor: pointer;
+        display: flex;
+
+        mat-icon {
+            color: var(--color-ripple-control);
+            font-size: 30px;
+            width: 100%;
+            height: 100%;
+            line-height: var(--input-height);
+            text-align: center;
+        }
+    }
+}
+
+@mixin select-overlay() {
+    .overlay {
+        background-color: white;
+        border-bottom: 1px solid var(--color-border-input);
+        border-top: 1px solid var(--color-border-input);
+        border-left: 1px solid var(--color-border-input);
+        border-right: 1px solid var(--color-border-input);
+        border-bottom-right-radius: var(--border-radius-card);
+        border-bottom-left-radius: var(--border-radius-card);
+        position: absolute;
+        left: -1px;
+        display: flex;
+        flex-direction: column;
+        max-height: 50vh;
+        overflow-x: hidden;
+
+        .items {
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            height: calc(var(--input-height) - 6px);
+            overflow: visible;
+
+            &:hover {
+                background-color: var(--color-details);
+            }
+
+            &:last-child {
+                border-bottom-right-radius: var(--border-radius-card);
+                border-bottom-left-radius: var(--border-radius-card);
+            }
+
+            .item {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                .text {
+                    font-family: var(--main-font-1);
+                    color: var(--color-text);
+                    text-align: left;
+                    font-size: 15px;
+                    line-height: calc(var(--input-height) - 6px);
+                    @include cut-long-text();
+                }
+
+                .circle {
+                    display: flex;
+                    background-color: var(--color-border-selected);
+                    border-radius: var(--border-radius-bubble);
+                    position: relative;
+                    height: 20px;
+                    width: 20px;
+                    color: white;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 10px;
+
+                    mat-icon {
+                        font-weight: 600;
+                        font-size: 16px;
+                        text-align: center;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin ripple-controls($height: var(--input-height), $width: var(--input-icon-width)) {
+    .ripple-controls {
+        height: calc($height);
+
+        .control {
+            border-left: 1px solid var(--color-border-input);
+            border-bottom: 1px solid var(--color-border-input);
+            height: calc($height/2);
+            width: calc($width);
+            cursor: pointer;
+
+            mat-icon {
+                font-size: 20px;
+                text-align: center;
+                height: 100%;
+                width: calc($width);
+                line-height: calc($height/2);
+                color: var(--color-ripple-control);
+            }
+        }
+    }
+}
+
+

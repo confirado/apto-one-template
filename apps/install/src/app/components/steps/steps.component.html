@@ -1,0 +1,181 @@
+<mat-card>
+    <mat-card-content>
+        <mat-stepper [linear]="true" #stepper >
+            <mat-step [editable]="false" [completed]="systemChecks && systemChecks.requirements.length === 0" label="Systemanforderungen">
+                <ng-container *ngIf="systemChecks">
+                    <mat-list>
+                        <div mat-subheader>Benötigt</div>
+                        <ng-container *ngFor="let requirement of systemChecks.requirements">
+                            <mat-list-item *ngIf="!requirement.fulfilled">
+                                <mat-icon mat-list-icon color="warn">cancel</mat-icon>
+                                <div mat-line>{{requirement.testMessage}}</div>
+                            </mat-list-item>
+                        </ng-container>
+                        <mat-list-item *ngIf="systemChecks.requirements.length === 0">
+                            <mat-icon mat-list-icon color="primary">check</mat-icon>
+                            <div mat-line>All requirements are fulfilled</div>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <div mat-subheader>Optional</div>
+                        <ng-container *ngFor="let recommendation of systemChecks.recommendations">
+                            <mat-list-item *ngIf="!recommendation.fulfilled">
+                                <mat-icon mat-list-icon color="warn">cancel</mat-icon>
+                                <div mat-line>{{recommendation.testMessage}}</div>
+                            </mat-list-item>
+                        </ng-container>
+                        <mat-list-item *ngIf="systemChecks.recommendations.length === 0">
+                            <mat-icon mat-list-icon color="primary">check</mat-icon>
+                            <div mat-line>All recommendations are fulfilled</div>
+                        </mat-list-item>
+                    </mat-list>
+
+                    <div class="step-actions">
+                        <button mat-raised-button color="primary" matStepperNext [disabled]="systemChecks.requirements.length > 0">Weiter</button>
+                    </div>
+                </ng-container>
+            </mat-step>
+            <mat-step [editable]="false" [completed]="false" label="Datenbank">
+                <form [formGroup]="databaseFormGroup">
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Host</mat-label>
+                            <input matInput formControlName="host">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Port</mat-label>
+                            <input matInput formControlName="port">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Benutzer</mat-label>
+                            <input matInput formControlName="user">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Passwort</mat-label>
+                            <input matInput formControlName="password" [type]="hidePasswords.database ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hidePasswords.database = !hidePasswords.database">
+                                <mat-icon>{{hidePasswords.database ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Datenbank</mat-label>
+                            <input matInput formControlName="dbname">
+                        </mat-form-field>
+                    </div>
+                    <div class="step-actions">
+                        <button mat-raised-button (click)="checkDbConnection()" [disabled]="!databaseFormGroup.valid">Verbindung Testen</button>
+                        <button mat-raised-button color="primary" (click)="nextStep()" [disabled]="!databaseFormGroup.valid || !dbCheckResult.success">Weiter</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [editable]="false" [completed]="false" label="Mailversand">
+                <div class="spinner-installation-step" *ngIf="spinners.database">
+                    <mat-spinner diameter="50"></mat-spinner>
+                    <div>
+                        <h3>Datenbank wird importiert ...</h3>
+                        <h4>Dieser Vorgang kann etwas dauern.</h4>
+                    </div>
+                </div>
+                <form [formGroup]="mailFormGroup" *ngIf="!spinners.database">
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Host</mat-label>
+                            <input matInput formControlName="host">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Port</mat-label>
+                            <input matInput formControlName="port">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Benutzer</mat-label>
+                            <input matInput formControlName="user">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Passwort</mat-label>
+                            <input matInput formControlName="password" [type]="hidePasswords.mail ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hidePasswords.mail = !hidePasswords.mail">
+                                <mat-icon>{{hidePasswords.mail ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Absender Name</mat-label>
+                            <input matInput formControlName="fromName">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Absender E-Mail</mat-label>
+                            <input matInput formControlName="fromMail">
+                        </mat-form-field>
+                    </div>
+                    <div class="step-actions">
+                        <button mat-raised-button (click)="checkMailDelivery()" [disabled]="!mailFormGroup.valid">Testmail senden</button>
+                        <button mat-raised-button (click)="updateConfigFile(false)">Überspringen</button>
+                        <button mat-raised-button color="primary" [disabled]="!mailFormGroup.valid || !mailDeliveryResult.success" (click)="updateConfigFile()">Weiter</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [editable]="false" [completed]="false" label="Konfigurator">
+                <div class="spinner-installation-step" *ngIf="spinners.finish">
+                    <mat-spinner diameter="50"></mat-spinner>
+                    <div>
+                        <h3>Die Installation wird abgeschlossen ...</h3>
+                        <h4>Gleich ist es soweit!</h4>
+                    </div>
+                </div>
+                <form [formGroup]="aptoFormGroup" *ngIf="!spinners.finish">
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Konfiguratorname</mat-label>
+                            <input matInput formControlName="name">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Admin Benutzername</mat-label>
+                            <input matInput formControlName="user">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Admin Passwort</mat-label>
+                            <input matInput formControlName="password" [type]="hidePasswords.admin ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hidePasswords.admin = !hidePasswords.admin">
+                                <mat-icon>{{hidePasswords.admin ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Domain</mat-label>
+                            <input matInput formControlName="domain">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Pfad</mat-label>
+                            <input matInput formControlName="publicPath">
+                        </mat-form-field>
+                    </div>
+                    <p>
+                        <strong>Domain: </strong>{{ protocol }}{{ aptoFormGroup.value.domain }}{{ aptoFormGroup.value.publicPath }}
+                    </p>
+                    <div class="step-actions">
+                        <button mat-raised-button color="primary" (click)="finishInstallation()" [disabled]="!aptoFormGroup.valid">Weiter</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [editable]="false" label="Fertig">
+                <div class="installation-finish">
+                    <h3>Die Installation wurde abgeschlossen</h3>
+                    <p><strong>Superadmin Passwort: </strong>{{ finishInstallationResult.superadmin }}</p>
+                    <div class="installation-finish-actions">
+                        <a mat-raised-button href="{{ protocol }}{{ aptoFormGroup.value.domain }}{{ aptoFormGroup.value.publicPath }}" target="_blank">Frontend</a>
+                        <a mat-raised-button href="{{ protocol }}{{ aptoFormGroup.value.domain }}{{ aptoFormGroup.value.publicPath }}/backend" target="_blank">Backend</a>
+                    </div>
+                </div>
+            </mat-step>
+        </mat-stepper>
+    </mat-card-content>
+</mat-card>

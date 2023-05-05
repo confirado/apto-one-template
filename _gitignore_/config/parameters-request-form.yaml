@@ -1,0 +1,20 @@
+parameters:
+    apto_plugin_request_form:
+        generateUserPDF: false
+        generateAdminPDF: false
+        saveOfferHtml: true
+        saveOfferData: true
+        seperatePartnerPDF: false
+        seperatePartnerMail: false
+        customer_mail:
+            add_element_attachments: false
+            subject: 'Ihre Produktkonfigurator-Anfrage'
+            mail_from: 'noreply@dev.confirado.de'
+            name_from: 'Confirado Development'
+        admin_mail:
+            add_element_attachments: false
+            subject: 'Neue Konfigurator-Anfrage'
+            mail_from: 'noreply@dev.confirado.de'
+            name_from: 'Confirado Development'
+            mail_to: 'mail@example.com'
+            name_to: 'Example'

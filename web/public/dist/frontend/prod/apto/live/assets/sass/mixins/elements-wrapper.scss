@@ -1,0 +1,52 @@
+@import "globals";
+@import "elements";
+
+@mixin container() {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@mixin single-element() {
+    position: relative;
+    width: var(--one-page-img-size);
+
+    .selected {
+        outline: 3px solid var(--color-border-dimensions);
+        border-radius: var(--border-radius-card);
+
+        .circle {
+            @include circle-checkbox(20px, 'outer');
+            outline: none;
+        }
+    }
+}
+
+@mixin element-img() {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-background-image);
+    overflow: hidden;
+    border-radius: var(--border-radius-card);
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: var(--one-page-img-size);
+    }
+}
+
+@mixin element-name() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+    word-break: break-all;
+    max-width: var(--one-page-img-size);
+    font-size: 13px;
+    font-weight: 500;
+}

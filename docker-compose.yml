@@ -1,0 +1,47 @@
+volumes:
+    apto-mariadb-volume:
+networks:
+    apto-docker-network:
+        name: apto-docker-network-${APTO_DOCKER_HOST}-${APTO_DOCKER_PORT}
+
+services:
+    apto-node-service:
+        image: node:lts-alpine
+        container_name: apto-node-container-${APTO_DOCKER_HOST}-${APTO_DOCKER_PORT}
+        user: node
+        working_dir: /home/node
+        volumes:
+            - .:/home/node
+        networks:
+            - apto-docker-network
+        depends_on:
+            - apto-apache-service
+    apto-apache-service:
+        build:
+            context: ./
+            dockerfile: ./docker/apache/Dockerfile
+        container_name: apto-apache-container-${APTO_DOCKER_HOST}-${APTO_DOCKER_PORT}
+        ports:
+            - "${APTO_DOCKER_PORT}:80"
+        volumes:
+            - .:/var/www/html
+        networks:
+            - apto-docker-network
+        depends_on:
+            - apto-mariadb-service
+    apto-mariadb-service:
+        build:
+            context: ./
+            dockerfile: ./docker/mariadb/Dockerfile
+            args:
+                APTO_DOCKER_DOMAIN: ${APTO_DOCKER_DOMAIN}
+        container_name: apto-mariadb-container-${APTO_DOCKER_HOST}-${APTO_DOCKER_PORT}
+        environment:
+            - MARIADB_ROOT_PASSWORD=${APTO_DOCKER_MARIADB_ROOT_PASSWORD}
+            - MARIADB_DATABASE=${APTO_DOCKER_MARIADB_DATABASE}
+            - MARIADB_USER=${APTO_DOCKER_MARIADB_USER}
+            - MARIADB_PASSWORD=${APTO_DOCKER_MARIADB_PASSWORD}
+        volumes:
+            - apto-mariadb-volume:/var/lib/mysql
+        networks:
+            - apto-docker-network
