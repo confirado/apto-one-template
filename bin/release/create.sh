@@ -9,7 +9,7 @@ cd tmp
 rm -Rf install-latest
 git clone git@github.com:confirado/apto-one-template.git install-latest
 cd install-latest
-git checkout apto-2-1
+git checkout main
 
 # copy git ignored files
 echo "copy ignored files"
@@ -35,7 +35,6 @@ rm -Rf .angular
 rm -Rf node_modules
 rm -Rf _client-deprecated_/node_modules
 rm -Rf _client-deprecated_/src-tmp
-rm -Rf vendor/apto-one/core/.git
 
 # create zip
 cd ..
