@@ -25,4 +25,5 @@ return [
     Apto\Plugins\WidthHeightElement\Infrastructure\WidthHeightElementBundle\WidthHeightElementBundle::class => ['all' => true],
     Apto\Plugins\DateElement\Infrastructure\DateElementBundle\DateElementBundle::class => ['all' => true],
     Apto\Plugins\RequestForm\Infrastructure\RequestFormBundle\RequestFormBundle::class => ['all' => true],
+    Apto\Plugins\ImageUpload\Infrastructure\ImageUploadBundle\ImageUploadBundle::class => ['all' => true],
 ];

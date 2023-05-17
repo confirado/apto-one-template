@@ -152,7 +152,10 @@
               ]
             },
             "scripts": [],
-            "fileReplacements": []
+            "fileReplacements": [],
+            "allowedCommonJsDependencies": [
+              "fabric"
+            ]
           },
           "configurations": {
             "production": {

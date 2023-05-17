@@ -15,7 +15,7 @@
         "php": ">=7.4.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "apto-one/core": "~2.1.0",
+        "apto-one/core": "~2.1.2",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.5",
         "doctrine/doctrine-migrations-bundle": "^3.2",
