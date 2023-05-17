@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e48e56f30dabf8f5ba03bba4388bfe58",
+    "content-hash": "c5d70ef95919f39b45ede9fc213fd07f",
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "dev-feature/image-upload",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "82ea83262a44c2e1bf8420184366842b5b695e4b"
+                "reference": "703e5e3a83bcca33caedaff82ad3a9aaf79ab232"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/82ea83262a44c2e1bf8420184366842b5b695e4b",
-                "reference": "82ea83262a44c2e1bf8420184366842b5b695e4b",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/703e5e3a83bcca33caedaff82ad3a9aaf79ab232",
+                "reference": "703e5e3a83bcca33caedaff82ad3a9aaf79ab232",
                 "shasum": ""
             },
             "require": {
@@ -35,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/feature/image-upload",
+                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.2",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-05-16T14:30:16+00:00"
+            "time": "2023-05-17T13:04:45+00:00"
         },
         {
             "name": "brick/math",
@@ -9826,9 +9826,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "apto-one/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
