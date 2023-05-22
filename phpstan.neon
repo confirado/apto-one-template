@@ -1,0 +1,9 @@
+parameters:
+    level: 5
+    paths:
+        - src/apto-one-core
+    #ignoreErrors:
+    #    - '#no value type specified in iterable type array.#'
+    #    - '#no value type specified in iterable type iterable.#'
+    #    - '#no return type specified.#'
+    #    - '#no type specified.#'
