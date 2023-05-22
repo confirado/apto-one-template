@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "723782a3dddc400fa2a92ce292784f1a",
+    "content-hash": "78f45fb76d20c367d57ef60ece6b7069",
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "dev-feature/php8-1",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "0a2c345cf134f4cb17a8d4e43ec0d20f6e2f1f0a"
+                "reference": "edd57d26979adf183a6adaf0130e4416e230b638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/0a2c345cf134f4cb17a8d4e43ec0d20f6e2f1f0a",
-                "reference": "0a2c345cf134f4cb17a8d4e43ec0d20f6e2f1f0a",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/edd57d26979adf183a6adaf0130e4416e230b638",
+                "reference": "edd57d26979adf183a6adaf0130e4416e230b638",
                 "shasum": ""
             },
             "require": {
@@ -35,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/feature/php8-1",
+                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.3",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-05-22T14:04:22+00:00"
+            "time": "2023-05-22T15:43:31+00:00"
         },
         {
             "name": "brick/math",
@@ -9891,9 +9891,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "apto-one/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
