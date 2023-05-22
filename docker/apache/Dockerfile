@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1-apache
 
 # install packeges
 RUN apt-get update && \
@@ -20,8 +20,8 @@ RUN apt-get update && \
 
 # php config
 COPY docker/apache/apto.ini /usr/local/etc/php/conf.d/apto.ini
-RUN docker-php-ext-install opcache intl mysqli gd zip xml soap bcmath json && \
-    docker-php-ext-enable opcache intl mysqli gd zip xml soap bcmath json
+RUN docker-php-ext-install opcache intl mysqli gd zip xml soap bcmath && \
+    docker-php-ext-enable opcache intl mysqli gd zip xml soap bcmath
 
 # apache config
 COPY docker/apache/apto.conf /etc/apache2/sites-available/apto.conf
