@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78f45fb76d20c367d57ef60ece6b7069",
+    "content-hash": "a5a19f30e7f3947dbb8fd308879bb501",
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "2.1.3",
+            "version": "dev-feature/image-upload-motives",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "edd57d26979adf183a6adaf0130e4416e230b638"
+                "reference": "abca86bfb83b3ac13e2e5c0bcb13ff92e51492a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/edd57d26979adf183a6adaf0130e4416e230b638",
-                "reference": "edd57d26979adf183a6adaf0130e4416e230b638",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/abca86bfb83b3ac13e2e5c0bcb13ff92e51492a1",
+                "reference": "abca86bfb83b3ac13e2e5c0bcb13ff92e51492a1",
                 "shasum": ""
             },
             "require": {
@@ -35,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.3",
+                "source": "https://github.com/confirado/apto-one-core/tree/feature/image-upload-motives",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-05-22T15:43:31+00:00"
+            "time": "2023-05-30T15:36:56+00:00"
         },
         {
             "name": "brick/math",
@@ -9891,7 +9891,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "apto-one/core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

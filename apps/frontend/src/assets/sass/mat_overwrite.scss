@@ -139,7 +139,7 @@ button.mat-flat-button {
 
     &.mat-primary {
         &:hover:not(.mat-button-disabled) {
-            background-color: #0E3E70;
+            background-color: var(--color-primary-hover);
             transition: background-color 0.3s ease;
         }
     }
