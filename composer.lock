@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "abca86bfb83b3ac13e2e5c0bcb13ff92e51492a1"
+                "reference": "8dfdc663a341c4d6b9644176095c6f2cd96cc0f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/abca86bfb83b3ac13e2e5c0bcb13ff92e51492a1",
-                "reference": "abca86bfb83b3ac13e2e5c0bcb13ff92e51492a1",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/8dfdc663a341c4d6b9644176095c6f2cd96cc0f6",
+                "reference": "8dfdc663a341c4d6b9644176095c6f2cd96cc0f6",
                 "shasum": ""
             },
             "require": {
@@ -38,7 +38,7 @@
                 "source": "https://github.com/confirado/apto-one-core/tree/feature/image-upload-motives",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-05-30T15:36:56+00:00"
+            "time": "2023-05-30T15:56:11+00:00"
         },
         {
             "name": "brick/math",
