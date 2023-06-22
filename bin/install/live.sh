@@ -6,7 +6,13 @@ cd ${SCRIPT_DIRECTORY}
 cd ../..
 
 # define executables
-PHP_EXECUTABLE=php
+PHP_EXECUTABLE=$1
+
+# set default php executable
+if [ -z "$1" ];
+then
+  PHP_EXECUTABLE=php
+fi
 
 # copy git ignored files
 echo "copy ignored files"
