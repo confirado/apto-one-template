@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "577034b54c91182f3ad54cae2389a7f9",
+    "content-hash": "f8c7b4022a9d89f841dd023ce2eba4c0",
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "2.1.7",
+            "version": "dev-feature/repair",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "bbae7dfadc692ffd0578cba26674ac9d3faa7f66"
+                "reference": "a8fcace31287edd687b5a57bc0560d538044e8cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/bbae7dfadc692ffd0578cba26674ac9d3faa7f66",
-                "reference": "bbae7dfadc692ffd0578cba26674ac9d3faa7f66",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/a8fcace31287edd687b5a57bc0560d538044e8cc",
+                "reference": "a8fcace31287edd687b5a57bc0560d538044e8cc",
                 "shasum": ""
             },
             "require": {
@@ -35,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.7",
+                "source": "https://github.com/confirado/apto-one-core/tree/feature/repair",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-06-30T08:44:11+00:00"
+            "time": "2023-06-30T13:26:44+00:00"
         },
         {
             "name": "brick/math",
@@ -9889,9 +9889,18 @@
             "time": "2023-02-17T16:59:45+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "apto-one/core",
+            "version": "dev-feature/repair",
+            "alias": "2.1.7",
+            "alias_normalized": "2.1.7.0"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "apto-one/core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
