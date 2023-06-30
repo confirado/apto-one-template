@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 17, 2023 at 03:54 PM
--- Server version: 10.11.2-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Jun 30, 2023 at 10:57 AM
+-- Server version: 10.11.3-MariaDB
+-- PHP Version: 8.1.19
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -372,7 +372,47 @@ INSERT INTO `apto_acl_entry` (`surrogate_id`, `shop_id`, `model`, `entity`, `fie
 (584, NULL, 'Apto\\Plugins\\ImageUpload\\Application\\Core\\Query\\Canvas\\FindCanvasList', NULL, NULL, 16, 'ROLE_WEBMASTER'),
 (585, NULL, 'Apto\\Plugins\\ImageUpload\\Application\\Core\\Query\\Canvas\\FindCanvasIds', NULL, NULL, 16, 'ROLE_WEBMASTER'),
 (586, NULL, 'Apto\\Plugins\\ImageUpload\\Application\\Core\\Query\\ImageMetaData\\FindImageMetaData', NULL, NULL, 16, 'ROLE_WEBMASTER'),
-(587, NULL, 'Apto\\Plugins\\ImageUpload\\Application\\Core\\Query\\RenderImage\\FindEditableRenderImage', NULL, NULL, 16, 'ROLE_WEBMASTER');
+(587, NULL, 'Apto\\Plugins\\ImageUpload\\Application\\Core\\Query\\RenderImage\\FindEditableRenderImage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(588, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddPart', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(589, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdatePart', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(590, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemoveRuleUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(591, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdateElementUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(592, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemoveProductUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(593, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddSectionUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(594, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdateProductUsageQuantity', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(595, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddProductUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(596, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemovePart', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(597, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemoveRuleUsageCondition', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(598, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdateRuleUsageCondition', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(599, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdateRuleUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(600, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddRuleUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(601, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddElementUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(602, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdateSectionUsageQuantity', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(603, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddRuleUsageCondition', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(604, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemoveElementUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(605, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemoveSectionUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(606, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Unit\\AddUnit', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(607, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\UpdatePartPrice', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(608, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\RemovePartPrice', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(609, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Part\\AddPartPrice', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(610, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Unit\\RemoveUnit', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(611, NULL, 'Apto\\Plugins\\PartsList\\Application\\Backend\\Commands\\Unit\\UpdateUnit', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(612, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindRuleUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(613, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindPart', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(614, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindPartsListCsv', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(615, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindProducts', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(616, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindProductsSectionsElements', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(617, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindParts', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(618, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindPartPrices', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(619, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindElementUsage', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(620, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindElements', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(621, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindSections', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(622, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindElementUsages', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(623, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindSectionUsages', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(624, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindProductUsages', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(625, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Part\\FindRuleUsages', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(626, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Unit\\FindUnit', NULL, NULL, 16, 'ROLE_WEBMASTER'),
+(627, NULL, 'Apto\\Plugins\\PartsList\\Application\\Core\\Query\\Unit\\FindUnits', NULL, NULL, 16, 'ROLE_WEBMASTER');
 
 -- --------------------------------------------------------
 
@@ -1864,7 +1904,8 @@ CREATE TABLE `apto_plugin_frontend_user` (
   `email` varchar(255) DEFAULT NULL,
   `external_customer_group_id` varchar(255) NOT NULL,
   `id` char(36) NOT NULL,
-  `username` varchar(255) NOT NULL
+  `username` varchar(255) NOT NULL,
+  `customer_number` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4804,7 +4845,8 @@ CREATE TABLE `plugin_image_upload_canvas` (
   `price_settings` longtext NOT NULL COMMENT '(DC2Type:array)',
   `created` datetime NOT NULL,
   `id` char(36) NOT NULL,
-  `identifier_value` varchar(255) NOT NULL
+  `identifier_value` varchar(255) NOT NULL,
+  `motive_settings` longtext NOT NULL DEFAULT 'a:3:{s:6:"active";b:0;s:11:"previewSize";i:250;s:6:"folder";N;}' COMMENT '(DC2Type:array)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5068,6 +5110,163 @@ CREATE TABLE `plugin_material_picker_render_image` (
   `created` datetime NOT NULL,
   `id` char(36) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part`;
+CREATE TABLE `plugin_parts_list_part` (
+  `surrogate_id` int(11) NOT NULL,
+  `unit_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 0,
+  `part_number` varchar(255) NOT NULL,
+  `name` longtext NOT NULL COMMENT '(DC2Type:AptoPropertyTranslatedValue)',
+  `description` longtext NOT NULL COMMENT '(DC2Type:AptoPropertyTranslatedValue)',
+  `base_quantity` int(11) NOT NULL DEFAULT 1,
+  `id` char(36) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part_element_usage`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part_element_usage`;
+CREATE TABLE `plugin_parts_list_part_element_usage` (
+  `surrogate_id` int(11) NOT NULL,
+  `part_surrogate_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `product_id` varchar(255) DEFAULT NULL,
+  `id` char(36) NOT NULL,
+  `usage_for_uuid_id` char(36) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `quantity_calculation_active` tinyint(1) NOT NULL DEFAULT 0,
+  `quantity_calculation_operation` varchar(255) DEFAULT NULL,
+  `quantity_calculation_field_type` varchar(255) DEFAULT NULL,
+  `quantity_calculation_field` varchar(255) DEFAULT NULL,
+  `quantity_calculation_field_position` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part_product_association`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part_product_association`;
+CREATE TABLE `plugin_parts_list_part_product_association` (
+  `surrogate_id` int(11) NOT NULL,
+  `part_surrogate_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `count` int(11) NOT NULL,
+  `id` char(36) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part_product_usage`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part_product_usage`;
+CREATE TABLE `plugin_parts_list_part_product_usage` (
+  `surrogate_id` int(11) NOT NULL,
+  `part_surrogate_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `product_id` varchar(255) DEFAULT NULL,
+  `id` char(36) NOT NULL,
+  `usage_for_uuid_id` char(36) NOT NULL,
+  `quantity` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part_rule_condition`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part_rule_condition`;
+CREATE TABLE `plugin_parts_list_part_rule_condition` (
+  `surrogate_id` int(11) NOT NULL,
+  `rule_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `property` varchar(255) DEFAULT NULL,
+  `section_id` varchar(255) DEFAULT NULL,
+  `computed_value_id` varchar(255) DEFAULT NULL,
+  `element_id` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  `id` char(36) NOT NULL,
+  `product_id_id` char(36) NOT NULL,
+  `operator` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part_rule_usage`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part_rule_usage`;
+CREATE TABLE `plugin_parts_list_part_rule_usage` (
+  `surrogate_id` int(11) NOT NULL,
+  `part_surrogate_id` int(11) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `product_id` varchar(255) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `conditions_operator` int(11) NOT NULL,
+  `id` char(36) NOT NULL,
+  `quantity` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_part_section_usage`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_part_section_usage`;
+CREATE TABLE `plugin_parts_list_part_section_usage` (
+  `surrogate_id` int(11) NOT NULL,
+  `part_surrogate_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `product_id` varchar(255) DEFAULT NULL,
+  `id` char(36) NOT NULL,
+  `usage_for_uuid_id` char(36) NOT NULL,
+  `quantity` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_list_unit`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_list_unit`;
+CREATE TABLE `plugin_parts_list_unit` (
+  `surrogate_id` int(11) NOT NULL,
+  `unit` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `id` char(36) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plugin_parts_part_to_apto_price`
+--
+
+DROP TABLE IF EXISTS `plugin_parts_part_to_apto_price`;
+CREATE TABLE `plugin_parts_part_to_apto_price` (
+  `part_surrogate_id` int(11) NOT NULL,
+  `apto_price_surrogate_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -5880,6 +6079,75 @@ ALTER TABLE `plugin_material_picker_render_image`
   ADD KEY `AptoCreated` (`created`);
 
 --
+-- Indexes for table `plugin_parts_list_part`
+--
+ALTER TABLE `plugin_parts_list_part`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD KEY `IDX_9610F06BF8BD700D` (`unit_id`);
+
+--
+-- Indexes for table `plugin_parts_list_part_element_usage`
+--
+ALTER TABLE `plugin_parts_list_part_element_usage`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD UNIQUE KEY `part_surrogate_id_usage_for_uuid_id` (`part_surrogate_id`,`usage_for_uuid_id`),
+  ADD KEY `IDX_5F58517BA401C423` (`part_surrogate_id`);
+
+--
+-- Indexes for table `plugin_parts_list_part_product_association`
+--
+ALTER TABLE `plugin_parts_list_part_product_association`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD KEY `IDX_F6353DA5A401C423` (`part_surrogate_id`),
+  ADD KEY `IDX_F6353DA54584665A` (`product_id`);
+
+--
+-- Indexes for table `plugin_parts_list_part_product_usage`
+--
+ALTER TABLE `plugin_parts_list_part_product_usage`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD UNIQUE KEY `part_surrogate_id_usage_for_uuid_id` (`part_surrogate_id`,`usage_for_uuid_id`),
+  ADD KEY `IDX_3A265EBEA401C423` (`part_surrogate_id`);
+
+--
+-- Indexes for table `plugin_parts_list_part_rule_condition`
+--
+ALTER TABLE `plugin_parts_list_part_rule_condition`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD KEY `IDX_7C30F870744E0351` (`rule_id`),
+  ADD KEY `AptoSurrogateId` (`surrogate_id`),
+  ADD KEY `AptoCreated` (`created`);
+
+--
+-- Indexes for table `plugin_parts_list_part_rule_usage`
+--
+ALTER TABLE `plugin_parts_list_part_rule_usage`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD KEY `IDX_5B04EC2AA401C423` (`part_surrogate_id`);
+
+--
+-- Indexes for table `plugin_parts_list_part_section_usage`
+--
+ALTER TABLE `plugin_parts_list_part_section_usage`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD UNIQUE KEY `part_surrogate_id_usage_for_uuid_id` (`part_surrogate_id`,`usage_for_uuid_id`),
+  ADD KEY `IDX_C2D4286A401C423` (`part_surrogate_id`);
+
+--
+-- Indexes for table `plugin_parts_list_unit`
+--
+ALTER TABLE `plugin_parts_list_unit`
+  ADD PRIMARY KEY (`surrogate_id`);
+
+--
+-- Indexes for table `plugin_parts_part_to_apto_price`
+--
+ALTER TABLE `plugin_parts_part_to_apto_price`
+  ADD PRIMARY KEY (`part_surrogate_id`,`apto_price_surrogate_id`),
+  ADD UNIQUE KEY `UNIQ_E0E5B3B1742DA830` (`apto_price_surrogate_id`),
+  ADD KEY `IDX_E0E5B3B1A401C423` (`part_surrogate_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -5887,7 +6155,7 @@ ALTER TABLE `plugin_material_picker_render_image`
 -- AUTO_INCREMENT for table `apto_acl_entry`
 --
 ALTER TABLE `apto_acl_entry`
-  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=588;
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=628;
 
 --
 -- AUTO_INCREMENT for table `apto_basket_configuration`
@@ -6223,6 +6491,54 @@ ALTER TABLE `plugin_material_picker_property`
 -- AUTO_INCREMENT for table `plugin_material_picker_render_image`
 --
 ALTER TABLE `plugin_material_picker_render_image`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part`
+--
+ALTER TABLE `plugin_parts_list_part`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part_element_usage`
+--
+ALTER TABLE `plugin_parts_list_part_element_usage`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part_product_association`
+--
+ALTER TABLE `plugin_parts_list_part_product_association`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part_product_usage`
+--
+ALTER TABLE `plugin_parts_list_part_product_usage`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part_rule_condition`
+--
+ALTER TABLE `plugin_parts_list_part_rule_condition`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part_rule_usage`
+--
+ALTER TABLE `plugin_parts_list_part_rule_usage`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_part_section_usage`
+--
+ALTER TABLE `plugin_parts_list_part_section_usage`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `plugin_parts_list_unit`
+--
+ALTER TABLE `plugin_parts_list_unit`
   MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -6625,6 +6941,56 @@ ALTER TABLE `plugin_material_picker_render_image`
   ADD CONSTRAINT `FK_DDB1FEF87B3406DF` FOREIGN KEY (`pool_id`) REFERENCES `plugin_material_picker_pool` (`surrogate_id`),
   ADD CONSTRAINT `FK_DDB1FEF8E308AC6F` FOREIGN KEY (`material_id`) REFERENCES `plugin_material_picker_material` (`surrogate_id`),
   ADD CONSTRAINT `FK_DDB1FEF8F21CFF25` FOREIGN KEY (`media_file_id`) REFERENCES `apto_media_file` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part`
+--
+ALTER TABLE `plugin_parts_list_part`
+  ADD CONSTRAINT `FK_9610F06BF8BD700D` FOREIGN KEY (`unit_id`) REFERENCES `plugin_parts_list_unit` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part_element_usage`
+--
+ALTER TABLE `plugin_parts_list_part_element_usage`
+  ADD CONSTRAINT `FK_5F58517BA401C423` FOREIGN KEY (`part_surrogate_id`) REFERENCES `plugin_parts_list_part` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part_product_association`
+--
+ALTER TABLE `plugin_parts_list_part_product_association`
+  ADD CONSTRAINT `FK_F6353DA54584665A` FOREIGN KEY (`product_id`) REFERENCES `apto_product` (`surrogate_id`),
+  ADD CONSTRAINT `FK_F6353DA5A401C423` FOREIGN KEY (`part_surrogate_id`) REFERENCES `plugin_parts_list_part` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part_product_usage`
+--
+ALTER TABLE `plugin_parts_list_part_product_usage`
+  ADD CONSTRAINT `FK_3A265EBEA401C423` FOREIGN KEY (`part_surrogate_id`) REFERENCES `plugin_parts_list_part` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part_rule_condition`
+--
+ALTER TABLE `plugin_parts_list_part_rule_condition`
+  ADD CONSTRAINT `FK_7C30F870744E0351` FOREIGN KEY (`rule_id`) REFERENCES `plugin_parts_list_part_rule_usage` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part_rule_usage`
+--
+ALTER TABLE `plugin_parts_list_part_rule_usage`
+  ADD CONSTRAINT `FK_5B04EC2AA401C423` FOREIGN KEY (`part_surrogate_id`) REFERENCES `plugin_parts_list_part` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_list_part_section_usage`
+--
+ALTER TABLE `plugin_parts_list_part_section_usage`
+  ADD CONSTRAINT `FK_C2D4286A401C423` FOREIGN KEY (`part_surrogate_id`) REFERENCES `plugin_parts_list_part` (`surrogate_id`);
+
+--
+-- Constraints for table `plugin_parts_part_to_apto_price`
+--
+ALTER TABLE `plugin_parts_part_to_apto_price`
+  ADD CONSTRAINT `FK_E0E5B3B1742DA830` FOREIGN KEY (`apto_price_surrogate_id`) REFERENCES `apto_price` (`surrogate_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_E0E5B3B1A401C423` FOREIGN KEY (`part_surrogate_id`) REFERENCES `plugin_parts_list_part` (`surrogate_id`) ON DELETE CASCADE;
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 

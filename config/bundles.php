@@ -26,4 +26,5 @@ return [
     Apto\Plugins\DateElement\Infrastructure\DateElementBundle\DateElementBundle::class => ['all' => true],
     Apto\Plugins\RequestForm\Infrastructure\RequestFormBundle\RequestFormBundle::class => ['all' => true],
     Apto\Plugins\ImageUpload\Infrastructure\ImageUploadBundle\ImageUploadBundle::class => ['all' => true],
+    Apto\Plugins\PartsList\Infrastructure\AptoPartsListBundle\AptoPartsListBundle::class => ['all' => true],
 ];
