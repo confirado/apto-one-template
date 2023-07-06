@@ -27,4 +27,5 @@ return [
     Apto\Plugins\RequestForm\Infrastructure\RequestFormBundle\RequestFormBundle::class => ['all' => true],
     Apto\Plugins\ImageUpload\Infrastructure\ImageUploadBundle\ImageUploadBundle::class => ['all' => true],
     Apto\Plugins\PartsList\Infrastructure\AptoPartsListBundle\AptoPartsListBundle::class => ['all' => true],
+    Apto\Plugins\FrontendUsers\Infrastructure\FrontendUsersBundle\FrontendUsersBundle::class => ['all' => true],
 ];
