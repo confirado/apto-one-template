@@ -30,10 +30,7 @@ RUN a2enmod rewrite && \
     a2enmod ssl && \
     a2enmod headers && \
     a2enmod expires && \
-    a2enmod proxy && \
-    a2enmod proxy_http && \
-    a2ensite apto && \
-    service apache2 restart
+    a2ensite apto
 
 # install composer
 RUN curl -sS https://getcomposer.org/installer | php && \
