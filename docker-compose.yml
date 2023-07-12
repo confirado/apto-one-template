@@ -54,7 +54,7 @@ services:
             - apto-docker-network
         restart: always
         container_name: apto-pma-container-${APTO_DOCKER_HOST}-${APTO_DOCKER_PORT}
-        hostname: localhost
+        hostname: ${APTO_DOCKER_HOST}
         image: phpmyadmin/phpmyadmin:5.2
         links:
             - apto-mariadb-service
