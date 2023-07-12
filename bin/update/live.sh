@@ -17,7 +17,7 @@ fi
 
 # git pull
 echo "Project update"
-${GIT_EXECUTABLE} pull origin apto-2-1
+${GIT_EXECUTABLE} pull origin main
 echo "Progress: [#----]"
 
 # composer install
