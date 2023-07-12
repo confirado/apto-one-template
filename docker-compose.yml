@@ -17,6 +17,7 @@ services:
         depends_on:
             - apto-apache-service
     apto-apache-service:
+        restart: unless-stopped
         build:
             context: ./
             dockerfile: ./docker/apache/Dockerfile
@@ -30,6 +31,7 @@ services:
         depends_on:
             - apto-mariadb-service
     apto-mariadb-service:
+        restart: unless-stopped
         build:
             context: ./
             dockerfile: ./docker/mariadb/Dockerfile
@@ -45,3 +47,20 @@ services:
             - apto-mariadb-volume:/var/lib/mysql
         networks:
             - apto-docker-network
+        ports:
+            - ${APTO_DOCKER_MARIADB_PORT}:3306
+    apto-pma-service:
+        networks:
+            - apto-docker-network
+        restart: always
+        container_name: apto-pma-container-${APTO_DOCKER_HOST}-${APTO_DOCKER_PORT}
+        hostname: ${APTO_DOCKER_HOST}
+        image: phpmyadmin/phpmyadmin:5.2
+        links:
+            - apto-mariadb-service
+        ports:
+            - ${APTO_DOCKER_PHPMYADMIN_PORT}:80
+        environment:
+            PMA_HOST: apto-mariadb-service
+            PMA_PORT: 3306
+            UPLOAD_LIMIT: 1028M
