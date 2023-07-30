@@ -124,7 +124,8 @@ $theme: mat.define-light-theme(
 
 @include mat.core($typography);
 
-button.mat-flat-button {
+button.mat-flat-button,
+a.mat-flat-button {
     font-family: var(--main-font-1);
     font-weight: 500;
     font-size: 12px;
@@ -207,14 +208,16 @@ button.mat-flat-button {
 }
 
 @media only screen and (min-width: $mobile-max-width) {
-    button.mat-flat-button  {
+    button.mat-flat-button,
+    a.mat-flat-button {
         height: var(--button-tablet-height);
         font-size: 15px;
     }
 }
 
 @media only screen and (min-width: $tablet-max-width) {
-    button.mat-flat-button  {
+    button.mat-flat-button,
+    a.mat-flat-button  {
         font-family: var(--main-font-1);
         font-weight: 600;
         box-shadow: var(--box-shadow);
@@ -224,7 +227,8 @@ button.mat-flat-button {
     }
 
     .one-page:not(.open-in-dialog) {
-        button.mat-flat-button  {
+        button.mat-flat-button,
+        a.mat-flat-button  {
             height: var(--button-tablet-height);
         }
     }
