@@ -51,8 +51,8 @@ fi
 # create local env file
 if [ ${USE_MAC_OS} = "y" ];
 then
-  echo "#APP_ENV=dev
-#APP_DEBUG=1
+  echo "APP_ENV=dev
+APP_DEBUG=1
 APTO_INSTALLER=disabled
 SA_HASH='\$2y\$13\$0EQamcJkuBdoAACfmfZXfuhyiQBWcZU/KLJ4kOjMyJYBCPie9MPNe'
 DATABASE_URL='mysql://root:123456@localhost:3306/${APTO_DB_NAME}?serverVersion=mariadb-10.6.4'
@@ -62,8 +62,8 @@ APTO_IMAGE_MAGICK_PATH='/opt/homebrew/bin/convert'
 APTO_GRAPHICS_MAGICK_PATH='/opt/homebrew/bin/convert gm'
 MAILER_DSN='smtp://noreply@dev.confirado.de:enter_password_here@sslout.de:465'" > .env.local
 else
-  echo "#APP_ENV=dev
-#APP_DEBUG=1
+  echo "APP_ENV=dev
+APP_DEBUG=1
 APTO_INSTALLER=disabled
 SA_HASH='\$2y\$13\$0EQamcJkuBdoAACfmfZXfuhyiQBWcZU/KLJ4kOjMyJYBCPie9MPNe'
 DATABASE_URL='mysql://root:123456@localhost:3306/${APTO_DB_NAME}?serverVersion=5.7'
