@@ -13,23 +13,17 @@ git config core.ignorecase false
 
 echo "copy ignored files"
 
-main_folder_path="."
-gitignore_folder="_gitignore_"
-env_filename=".env.docker"
-
 # Check if .env.docker file doesn't exist in the main folder
-if [ ! -f "$main_folder_path/$env_filename" ]; then
-    cp "$gitignore_folder/$env_filename" "$main_folder_path/"
-    echo "$env_filename copied."
+if [ ! -f ".env.docker" ]; then
+    cp -r _gitignore_/. .
 else
-    echo "$env_filename already exists in the main folder."
+    cp .env.docker .env.docker.backup
+    cp -r _gitignore_/. .
+    cp .env.docker.backup .env.docker
+    rm .env.docker.backup
 fi
 
-# Copy all files from _gitignore_ folder except .env.docker
-find "$gitignore_folder" -maxdepth 1 -type f ! -name "$env_filename" -exec cp -t "$main_folder_path" {} +
-
-echo "Files copied from $gitignore_folder to $main_folder_path."
-
+echo "Files copied from "_gitignore_"."
 
 echo "create local env file"
 echo "APTO_INSTALLER=disabled
