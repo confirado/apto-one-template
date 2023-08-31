@@ -8,13 +8,21 @@ parameters:
         seperatePartnerMail: false
         customer_mail:
             add_element_attachments: false
+            add_parts_list_attachment: false
             subject: 'Ihre Produktkonfigurator-Anfrage'
             mail_from: 'noreply@dev.confirado.de'
             name_from: 'Confirado Development'
         admin_mail:
             add_element_attachments: false
+            add_parts_list_attachment: false
             subject: 'Neue Konfigurator-Anfrage'
             mail_from: 'noreply@dev.confirado.de'
             name_from: 'Confirado Development'
             mail_to: 'mail@example.com'
             name_to: 'Example'
+        ftp_upload_parts_list:
+            active: false
+            user: ''
+            password: ''
+            host: ''
+            folder: ''
