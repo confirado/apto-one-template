@@ -154,7 +154,8 @@
             "scripts": [],
             "fileReplacements": [],
             "allowedCommonJsDependencies": [
-              "fabric"
+              "fabric",
+              "fontfaceobserver"
             ]
           },
           "configurations": {

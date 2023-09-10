@@ -21,6 +21,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/color-picker": "~8.0.0",
+    "@angular-material-components/file-input": "~8.0.0",
     "@angular/animations": "^14.2.2",
     "@angular/common": "^14.2.2",
     "@angular/compiler": "^14.2.2",
@@ -35,9 +37,11 @@
     "@ngrx/store": "^14.3.1",
     "angular-resize-event": "^3.2.0",
     "fabric": "^5.3.0",
+    "fontfaceobserver": "^2.1.0",
     "ngx-pipes": "^3.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "uuid": "^9.0.0",
     "zone.js": "^0.11.8"
   },
   "devDependencies": {
