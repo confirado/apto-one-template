@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build-release": "npm run live-backend && npm run staging-backend",
     "local-backend": "cross-env NODE_ENV=production cross-env APTO_APP=backend cross-env APTO_APP_CONFIG=local npm run build-prod",
     "local-backend-dev": "cross-env NODE_ENV=development cross-env APTO_APP=backend cross-env APTO_APP_CONFIG=local npm run build-dev",
     "local-frontend": "cross-env NODE_ENV=production cross-env APTO_APP=frontend cross-env APTO_APP_CONFIG=local npm run build-prod",

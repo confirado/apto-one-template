@@ -2,6 +2,7 @@
   "name": "apto-angular-template",
   "version": "0.0.0",
   "scripts": {
+    "build-release": "npm run live-frontend && npm run staging-frontend",
     "apto-start-backend": "npm run apto-build && ng serve backend --host grobi.projektversion.de --port 4200",
     "apto-start-frontend": "npm run apto-build && ng serve frontend --host grobi.projektversion.de --port 4201",
     "local-frontend": "npm run apto-build && ng build frontend --configuration production",
