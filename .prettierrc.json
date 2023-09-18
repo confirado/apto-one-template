@@ -3,8 +3,22 @@
 	"htmlWhitespaceSensitivity": "strict",
 	"printWidth": 140,
 	"trailingComma": "es5",
-	"tabWidth": 2,
-	"useTabs": true,
+	"tabWidth": 4,
+	"useTabs": false,
 	"semi": true,
-	"bracketSpacing": true
+	"bracketSpacing": true,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.json"],
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.html"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }
