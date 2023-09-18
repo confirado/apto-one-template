@@ -25,6 +25,17 @@
 
         grid-template-columns: calc(var(--image-tablet-width) + 2*var(--element-gap)) 1fr;
         justify-items: flex-start;
+
+        &.no-element-preview-image {
+            grid-template-areas:
+            "header"
+            "picture"
+            "description"
+            "element"
+            "buttons";
+
+            grid-template-columns: 1fr;
+        }
     }
 
     &.step-by-step:not(.open-in-dialog) {
@@ -62,6 +73,17 @@
                     "picture buttons";
 
             grid-template-columns: calc(var(--image-one-page-width) + 2*var(--element-gap)) 1fr;
+        }
+
+        &.no-element-preview-image {
+            grid-template-areas:
+            "header"
+            "picture"
+            "description"
+            "element"
+            "buttons";
+
+            grid-template-columns: 1fr;
         }
     }
 }
