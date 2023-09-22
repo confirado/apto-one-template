@@ -14,7 +14,7 @@ You can find our Documentation here: https://docs.apto.one
 
 Note: To setup this project using this method, you need to have the following installed:
 
-- PHP 7.4
+- PHP 8.1
 - MariaDB 10.6 or MySql 5.7
 - node.js
 - npm
