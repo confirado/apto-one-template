@@ -155,7 +155,13 @@
             "fileReplacements": [],
             "allowedCommonJsDependencies": [
               "fabric",
-              "fontfaceobserver"
+              "fontfaceobserver",
+              "typed-function",
+              "seedrandom",
+              "javascript-natural-sort",
+              "complex.js",
+              "fraction.js",
+              "escape-latex"
             ]
           },
           "configurations": {
