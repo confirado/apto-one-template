@@ -211,8 +211,8 @@
         }
 
         grid-template-areas:
-            "title image"
-            "description image";
+            "title title"
+            "image description";
         justify-content: space-between;
         justify-items: flex-start;
     }
