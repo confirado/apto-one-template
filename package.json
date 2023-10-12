@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build-release": "npm run live-frontend && npm run staging-frontend",
+    "cypress:open": "APTO_CYPRESS_ENV=dev node_modules/.bin/cypress open",
+    "cypress:run": "APTO_CYPRESS_ENV=dev node_modules/.bin/cypress run",
     "apto-start-backend": "npm run apto-build && ng serve backend --host grobi.projektversion.de --port 4200",
     "apto-start-frontend": "npm run apto-build && ng serve frontend --host grobi.projektversion.de --port 4201",
     "local-frontend": "npm run apto-build && ng build frontend --configuration production",
@@ -57,6 +59,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "cypress": "^13.3.1",
     "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^3.5.1",
