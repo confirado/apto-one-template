@@ -10,8 +10,9 @@ const folders = {
   downloadsFolder: path + '/cypress/Tests/_downloads',
   fixturesFolder: path + '/cypress/_fixtures',
   supportFolder: path + '/cypress/_support',
+  supportFile: path + '/cypress/_support/index.ts',
   videosFolder: path + '/cypress/_videos',
-  screenshotsFolder: path + '/cypress/_screenshots'
+  screenshotsFolder: path + '/cypress/_screenshots',
 };
 
 export default defineConfig({
@@ -24,4 +25,6 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
+  viewportWidth: 1920,
+  viewportHeight: 1200,
 });
