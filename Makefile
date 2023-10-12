@@ -43,3 +43,9 @@ run-frontend-dev:
 
 run-backend-dev:
 	docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'cd _client-deprecated_ && npm run local-backend'
+
+open-cypress:
+	npm run-script cypress:open
+
+close-cypress:
+	pkill -2 Cypress
