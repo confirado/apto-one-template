@@ -11,7 +11,8 @@
 	"env": {
 		"es2021": true,
 		"browser": true,
-		"node": true
+		"node": true,
+    "cypress/globals": true
 	},
 	"extends": ["airbnb-base"],
 	"parser": "@typescript-eslint/parser",
@@ -19,7 +20,10 @@
 		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
-	"plugins": ["@typescript-eslint"],
+	"plugins": [
+    "@typescript-eslint",
+    "cypress"
+  ],
 	"rules": {
 		"import/extensions": [
 			"error",
