@@ -19,7 +19,7 @@ export default defineConfig({
   e2e: {
     ...folders,
     env: {
-      baseUrl: 'http://grobi.projektversion.de/apto-one-template/web/#'
+      baseUrl: 'http://grobi.projektversion.de/apto-one-template/web/'
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
