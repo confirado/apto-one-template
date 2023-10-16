@@ -264,6 +264,8 @@
             width: calc($width);
             cursor: pointer;
 
+            @include input-disabled();
+
             mat-icon {
                 font-size: 20px;
                 text-align: center;

@@ -25,3 +25,26 @@
     height: 100%;
     width: 100%;
 }
+
+/* We want to hide browser default up and down arrows next to the number input so we can display our owns */
+@mixin hide-number-input-arrows() {
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    & {
+        -moz-appearance: textfield;
+    }
+}
+
+@mixin input-disabled() {
+    &.input-disabled {
+        opacity: 0.6;
+        cursor: default;
+        pointer-events: none;
+    }
+}
