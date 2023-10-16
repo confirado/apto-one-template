@@ -48,6 +48,20 @@
     }
 }
 
+@mixin label() {
+    font-size: 18px;
+    color: var(--color-text);
+    font-weight: 500;
+    text-align: left;
+}
+
+@mixin search-icon() {
+    font-size: 18px;
+    color: var(--color-text);
+    color: var(--color-border-input);
+    font-weight: 500;
+}
+
 @mixin container($height: var(--input-height)) {
     display: flex;
     overflow: hidden;
