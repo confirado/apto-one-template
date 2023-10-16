@@ -198,6 +198,12 @@
             font-size: 29px;
             font-weight: 600;
         }
+
+        &.no-image {
+            grid-template-areas:
+            "title"
+            "description";
+        }
     }
 
     @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
@@ -215,6 +221,13 @@
             "image description";
         justify-content: space-between;
         justify-items: flex-start;
+        grid-template-columns: auto 1fr;
+
+        &.no-image {
+            grid-template-areas:
+            "title"
+            "description";
+        }
     }
 
     .description {
