@@ -9889,9 +9889,18 @@
             "time": "2023-02-17T16:59:45+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "apto-one/core",
+            "version": "dev-feature/APTOONE-237",
+            "alias": "2.1.45",
+            "alias_normalized": "2.1.45.0"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "apto-one/core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
