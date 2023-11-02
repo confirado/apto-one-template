@@ -57,7 +57,6 @@
 
 @mixin search-icon() {
     font-size: 18px;
-    color: var(--color-text);
     color: var(--color-border-input);
     font-weight: 500;
 }
@@ -98,6 +97,15 @@
     outline: none;
     padding-right: var(--input-elements-gap);
     padding-left: 20px;
+
+    &::placeholder {
+        opacity: 1; /* Firefox */
+        font-weight: 400;
+    }
+
+    &::-ms-input-placeholder { /* Edge 12 -18 */
+        font-weight: 400;
+    }
 }
 
 @mixin textarea($screen-size: 'mobile') {
@@ -117,6 +125,15 @@
 
     @if ($screen-size == 'tablet') {
         width: calc(var(--input-tablet-width) - 30px);
+    }
+
+    &::placeholder {
+        opacity: 1; /* Firefox */
+        font-weight: 400;
+    }
+
+    &::-ms-input-placeholder { /* Edge 12 -18 */
+        font-weight: 400;
     }
 }
 
@@ -143,6 +160,10 @@
                 font-weight: 600;
                 font-family: var(--main-font-1);
                 color: var(--color-text);
+
+                &.default {
+                    font-weight: 400;
+                }
                 @include cut-long-text();
             }
         }
