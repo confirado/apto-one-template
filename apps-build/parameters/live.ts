@@ -20,4 +20,5 @@ export const parameters = {
     inputGross: true,
     showGross: true,
   },
+  showPrices: true
 };
