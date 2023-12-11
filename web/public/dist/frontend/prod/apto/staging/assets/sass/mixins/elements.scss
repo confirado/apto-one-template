@@ -1,5 +1,6 @@
 @import "globals";
 @import "common";
+@import "dialogs";
 
 @mixin element-grid($screen-size: 'mobile') {
     display: grid;
@@ -40,6 +41,13 @@
 
     &.step-by-step:not(.open-in-dialog) {
         padding: var(--element-gap);
+        border: solid 3px transparent;
+        border-radius: var(--border-radius-card);
+        transition: border-color 0.3s ease;
+
+        &.selected {
+            border-color: var(--color-border-dimensions);
+        }
     }
 
     &.step-by-step.open-in-dialog,
@@ -48,6 +56,8 @@
         border-top-style: solid;
         border-radius: var(--border-radius-card);
         padding: 34px 72px;
+
+        @include border-color();
     }
 
     // in one page we dont need padding, as the padding is given from parent element
@@ -329,7 +339,7 @@
 }
 
 @mixin circle-checkbox ($size: 25px, $position: 'outer'){
-    border: 2px solid var(--color-border-selected);
+    border: 2px solid transparent;
     border-radius: var(--border-radius-bubble);
     height: $size;
     width: $size;
@@ -338,6 +348,10 @@
     justify-content: center;
     align-items: center;
     position: absolute;
+    background-color: white;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
 
     mat-icon {
         display: none;
@@ -366,6 +380,7 @@
 
     &.selected {
         background-color: var(--color-border-selected);
+        border: 2px solid var(--color-border-selected);
 
         mat-icon {
             display: flex;
