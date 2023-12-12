@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 30, 2023 at 10:57 AM
--- Server version: 10.11.3-MariaDB
--- PHP Version: 8.1.19
+-- Generation Time: Dec 12, 2023 at 10:17 PM
+-- Server version: 11.2.2-MariaDB
+-- PHP Version: 8.1.26
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -3706,21 +3706,22 @@ CREATE TABLE `apto_product` (
   `max_purchase` int(11) NOT NULL DEFAULT 0,
   `preview_image_id` int(11) DEFAULT NULL,
   `position` int(11) NOT NULL DEFAULT 0,
-  `min_purchase` int(11) NOT NULL DEFAULT 0
+  `min_purchase` int(11) NOT NULL DEFAULT 0,
+  `keep_section_order` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `apto_product`
 --
 
-INSERT INTO `apto_product` (`surrogate_id`, `name`, `description`, `created`, `id`, `active`, `hidden`, `use_step_by_step`, `article_number`, `meta_title`, `meta_description`, `stock`, `weight`, `identifier_value`, `tax_rate`, `seo_url`, `price_calculator_id`, `delivery_time`, `max_purchase`, `preview_image_id`, `position`, `min_purchase`) VALUES
-(48, '{\"de_DE\":\"Fenster Step by Step\"}', '{\"de_DE\":\"\"}', '2018-01-17 13:48:25', '55761379-980a-4141-a2df-932ecb88b311', 1, 0, 1, NULL, '{\"de_DE\":\"Fenster Konfigurator Demo - confirado.de\"}', '{\"de_DE\":\"\"}', 0, 0, 'fenster', 19, 'fenster-step-by-step', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '25', 0, NULL, 0, 0),
-(88, '{\"de_DE\":\"Fenster One Page\"}', '{\"de_DE\":\"\"}', '2020-09-15 20:40:22', 'fe65066c-41b9-46da-a500-044777a1d4b5', 1, 0, 0, NULL, '{\"de_DE\":\"Fenster Konfigurator Demo - confirado.de\"}', '{\"de_DE\":\"\"}', 0, 0, 'fenster-one-page', 19, 'fenster-one-page', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '25', 0, NULL, 0, 0),
-(90, '{\"de_DE\":\"Tasse\"}', '[]', '2021-11-15 09:31:46', '2ee39a39-11fe-4d26-b2fe-b4c372df53dd', 1, 0, 0, NULL, '{\"de_DE\":\"Tasse Demo Konfigurator - confirado.de\"}', '[]', 0, 0, 'tasse', 0, 'tasse', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 40, 0),
-(91, '{\"de_DE\":\"Haus-Konfigurator\"}', '[]', '2021-11-15 10:18:41', '88aab207-120b-46de-b51a-40c580e95553', 1, 0, 1, NULL, '{\"de_DE\":\"Haus Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'haus', 0, 'haus', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 50, 0),
-(92, '{\"de_DE\":\"Pick-Up\"}', '[]', '2021-11-15 11:32:46', '57563798-0bf6-48d1-a86c-ddc82ad2390c', 1, 0, 0, NULL, '{\"de_DE\":\"PickUp Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'pickup', 0, 'pick-up', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 60, 0),
-(93, '{\"de_DE\":\"Garagentor\"}', '[]', '2021-11-15 13:38:08', '3c6c5e2f-7759-42fc-a4c3-4edd1ddb39af', 1, 0, 1, NULL, '{\"de_DE\":\"Garagentor Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'garagentor', 19, 'garagentor', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 70, 0),
-(94, '{\"de_DE\":\"Schuh\"}', '[]', '2021-11-15 14:31:21', 'b2d12f15-a2d4-4c0f-bb20-ad82b392f872', 1, 0, 0, NULL, '{\"de_DE\":\"Schuh Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'schuh', 19, '3402d885-d666-422d-8f86-52f70741111e', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 80, 0);
+INSERT INTO `apto_product` (`surrogate_id`, `name`, `description`, `created`, `id`, `active`, `hidden`, `use_step_by_step`, `article_number`, `meta_title`, `meta_description`, `stock`, `weight`, `identifier_value`, `tax_rate`, `seo_url`, `price_calculator_id`, `delivery_time`, `max_purchase`, `preview_image_id`, `position`, `min_purchase`, `keep_section_order`) VALUES
+(48, '{\"de_DE\":\"Fenster Step by Step\"}', '{\"de_DE\":\"\"}', '2018-01-17 13:48:25', '55761379-980a-4141-a2df-932ecb88b311', 1, 0, 1, NULL, '{\"de_DE\":\"Fenster Konfigurator Demo - confirado.de\"}', '{\"de_DE\":\"\"}', 0, 0, 'fenster', 19, 'fenster-step-by-step', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '25', 0, NULL, 0, 0, 1),
+(88, '{\"de_DE\":\"Fenster One Page\"}', '{\"de_DE\":\"\"}', '2020-09-15 20:40:22', 'fe65066c-41b9-46da-a500-044777a1d4b5', 1, 0, 0, NULL, '{\"de_DE\":\"Fenster Konfigurator Demo - confirado.de\"}', '{\"de_DE\":\"\"}', 0, 0, 'fenster-one-page', 19, 'fenster-one-page', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '25', 0, NULL, 0, 0, 1),
+(90, '{\"de_DE\":\"Tasse\"}', '[]', '2021-11-15 09:31:46', '2ee39a39-11fe-4d26-b2fe-b4c372df53dd', 1, 0, 0, NULL, '{\"de_DE\":\"Tasse Demo Konfigurator - confirado.de\"}', '[]', 0, 0, 'tasse', 0, 'tasse', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 40, 0, 1),
+(91, '{\"de_DE\":\"Haus-Konfigurator\"}', '[]', '2021-11-15 10:18:41', '88aab207-120b-46de-b51a-40c580e95553', 1, 0, 1, NULL, '{\"de_DE\":\"Haus Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'haus', 0, 'haus', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 50, 0, 1),
+(92, '{\"de_DE\":\"Pick-Up\"}', '[]', '2021-11-15 11:32:46', '57563798-0bf6-48d1-a86c-ddc82ad2390c', 1, 0, 0, NULL, '{\"de_DE\":\"PickUp Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'pickup', 0, 'pick-up', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 60, 0, 1),
+(93, '{\"de_DE\":\"Garagentor\"}', '[]', '2021-11-15 13:38:08', '3c6c5e2f-7759-42fc-a4c3-4edd1ddb39af', 1, 0, 1, NULL, '{\"de_DE\":\"Garagentor Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'garagentor', 19, 'garagentor', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 70, 0, 1),
+(94, '{\"de_DE\":\"Schuh\"}', '[]', '2021-11-15 14:31:21', 'b2d12f15-a2d4-4c0f-bb20-ad82b392f872', 1, 0, 0, NULL, '{\"de_DE\":\"Schuh Konfigurator Demo - confirado.de\"}', '[]', 0, 0, 'schuh', 19, '3402d885-d666-422d-8f86-52f70741111e', 'Apto\\Catalog\\Application\\Core\\Service\\PriceCalculator\\SimplePriceCalculator', '', 0, NULL, 80, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -4035,18 +4036,6 @@ CREATE TABLE `apto_product_element_to_apto_price` (
 --
 
 INSERT INTO `apto_product_element_to_apto_price` (`product_element_surrogate_id`, `apto_price_surrogate_id`) VALUES
-(257, 5565),
-(258, 5566),
-(267, 5567),
-(268, 5568),
-(269, 5569),
-(270, 5570),
-(271, 5571),
-(272, 5572),
-(274, 5573),
-(275, 5574),
-(277, 5575),
-(278, 5576),
 (888, 5553),
 (889, 5554),
 (895, 5555),
@@ -4058,7 +4047,19 @@ INSERT INTO `apto_product_element_to_apto_price` (`product_element_surrogate_id`
 (902, 5561),
 (903, 5562),
 (904, 5563),
-(905, 5564);
+(905, 5564),
+(257, 5565),
+(258, 5566),
+(267, 5567),
+(268, 5568),
+(269, 5569),
+(270, 5570),
+(271, 5571),
+(272, 5572),
+(274, 5573),
+(275, 5574),
+(277, 5575),
+(278, 5576);
 
 -- --------------------------------------------------------
 
@@ -4453,65 +4454,67 @@ CREATE TABLE `apto_product_section` (
   `position` int(11) NOT NULL DEFAULT 0,
   `description` longtext DEFAULT NULL COMMENT '(DC2Type:AptoPropertyTranslatedValue)',
   `preview_image_id` int(11) DEFAULT NULL,
-  `is_zoomable` tinyint(1) NOT NULL DEFAULT 0
+  `is_zoomable` tinyint(1) NOT NULL DEFAULT 0,
+  `repeatable_type` varchar(255) NOT NULL DEFAULT 'Statisch',
+  `repeatable_calculated_value_name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `apto_product_section`
 --
 
-INSERT INTO `apto_product_section` (`surrogate_id`, `name`, `created`, `product_id`, `id`, `identifier_value`, `group_id`, `allow_multiple`, `is_active`, `is_mandatory`, `is_hidden`, `position`, `description`, `preview_image_id`, `is_zoomable`) VALUES
-(91, '{\"de_DE\":\"Fensterfarbe\"}', '2018-01-17 13:51:43', 48, 'ec6e552f-f810-4f5a-8e1f-1b125748cadd', 'fensterfarbe', NULL, 0, 1, 1, 0, 10, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Fensterrahmen aus.\"}', NULL, 0),
-(92, '{\"de_DE\":\"Montage\"}', '2018-01-17 14:00:18', 48, '48562933-fed0-46ea-bfec-713f2ed6e8bd', 'montage', NULL, 0, 1, 1, 0, 20, '{\"de_DE\":\"W\\u00fcnschen Sie eine Montage mit oder ohne Rollokasten?\"}', NULL, 0),
-(93, '{\"de_DE\":\"Rollofarbe\"}', '2018-01-17 14:00:26', 48, 'b5a10157-0658-4c0a-bab8-e011447408d7', 'rollofarbe', NULL, 0, 1, 1, 0, 30, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Rolladen aus.\"}', NULL, 0),
-(94, '{\"de_DE\":\"Sicherheit\"}', '2018-01-17 14:00:33', 48, 'c433956d-3090-4b53-a4af-63ef48ffbc7a', 'sicherheit', NULL, 1, 1, 1, 0, 40, '{\"de_DE\":\"Einbrechern keine Chance geben!<br><br>\"}', NULL, 0),
-(95, '{\"de_DE\":\"Verglasung\"}', '2018-01-17 14:00:39', 48, '8b6f95cc-37ab-42ee-9278-9a10633a79d7', 'verglasung', NULL, 0, 1, 1, 0, 50, '{\"de_DE\":\"Isolierverglasung nach DIN EN 673\"}', NULL, 0),
-(96, '{\"de_DE\":\"Schallschutzglas\"}', '2018-01-17 14:00:44', 48, '6f19227d-54c2-4d1d-9b4b-1277133602ee', 'schallschutzglas', NULL, 0, 1, 1, 0, 60, '[]', NULL, 0),
-(97, '{\"de_DE\":\"Rollobedienung\"}', '2018-01-17 14:00:49', 48, 'da4433c1-c11a-42e9-afb0-401464f5d736', 'rollofeature', NULL, 0, 1, 0, 0, 70, '{\"de_DE\":\"\"}', NULL, 0),
-(98, '{\"de_DE\":\"Ma\\u00dfe\"}', '2018-01-17 14:00:54', 48, '3cbf6e24-4516-4407-872d-1ff8c3f63005', 'masse', NULL, 0, 1, 1, 0, 0, '[]', NULL, 0),
-(308, '{\"de_DE\":\"Fensterfarbe\"}', '2020-09-15 20:40:22', 88, 'a12d9d26-4d57-4bf0-89dd-1d75cf66b8de', 'fensterfarbe', 1, 0, 1, 1, 0, 10, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Fensterrahmen aus.\"}', NULL, 0),
-(309, '{\"de_DE\":\"Montage\"}', '2020-09-15 20:40:22', 88, '67790e03-2e2c-4e13-81a6-b52dc3d65982', 'montage', 2, 0, 0, 0, 0, 20, '{\"de_DE\":\"W\\u00fcnschen Sie eine Montage mit oder ohne Rollokasten?\"}', NULL, 0),
-(310, '{\"de_DE\":\"Rollofarbe\"}', '2020-09-15 20:40:22', 88, 'e6e01110-f542-4529-b328-f24f8f91c089', 'rollofarbe', 2, 0, 1, 1, 0, 30, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Rolladen aus.\"}', NULL, 0),
-(311, '{\"de_DE\":\"Sicherheit\"}', '2020-09-15 20:40:22', 88, '9cfd8b92-151b-4467-8b3c-9435047bedb6', 'sicherheit', 2, 1, 1, 1, 0, 40, '{\"de_DE\":\"Einbrechern keine Chance geben!<br><br>\"}', NULL, 0),
-(312, '{\"de_DE\":\"Verglasung\"}', '2020-09-15 20:40:22', 88, 'c44df701-3fc1-4df3-816b-67ccc8ca6374', 'verglasung', 3, 0, 1, 1, 0, 50, '{\"de_DE\":\"Isolierverglasung nach DIN EN 673\"}', NULL, 0),
-(313, '{\"de_DE\":\"Schallschutzglas\"}', '2020-09-15 20:40:22', 88, '369f053b-2fe6-4c66-910d-22d11cc18308', 'schallschutzglas', 3, 0, 1, 1, 0, 60, '[]', NULL, 0),
-(314, '{\"de_DE\":\"Rollobedienung\"}', '2020-09-15 20:40:22', 88, '3c84feb5-1234-4b96-8beb-3f4cab56cfba', 'rollofeature', 3, 0, 1, 0, 0, 70, '{\"de_DE\":\"\"}', NULL, 0),
-(315, '{\"de_DE\":\"Ma\\u00dfe\"}', '2020-09-15 20:40:22', 88, '581d85d4-e9ea-4ca6-9a1f-0c9cecda0ad6', 'masse', 1, 0, 1, 1, 0, 0, '[]', NULL, 0),
-(316, '{\"de_DE\":\"Rollogr\\u00f6\\u00dfe\"}', '2020-09-24 19:49:11', 48, '071bd613-4be6-4986-8eb9-602f58b1d072', 'rollogroesse', NULL, 0, 1, 1, 0, 35, '{\"de_DE\":\"\"}', NULL, 0),
-(317, '{\"de_DE\":\"Sonderw\\u00fcnsche\"}', '2020-09-24 19:58:36', 48, '1864ad13-a7b2-4767-bba7-8b52f969e935', 'sonderwuensche', NULL, 1, 1, 0, 0, 80, '[]', NULL, 0),
-(324, '{\"de_DE\":\"farbe\"}', '2021-11-15 09:33:49', 90, '60df53e9-36bd-4131-b329-2dee2f7f0724', 'farbe', NULL, 0, 1, 0, 0, 10, '[]', NULL, 0),
-(325, '{\"de_DE\":\"Farbe Innenseite\"}', '2021-11-15 09:34:05', 90, '201866c1-b4c6-416f-9a01-77b50749dd28', 'innenseite', NULL, 0, 1, 0, 0, 20, '[]', NULL, 0),
-(328, '{\"de_DE\":\"Girl\\u00b4s Day Logo\"}', '2021-11-15 09:36:03', 90, 'd2637258-bbf7-44ef-ad63-16ec180a53d7', 'girls-day-logo', NULL, 0, 1, 0, 0, 50, '[]', NULL, 0),
-(329, '{\"de_DE\":\"Maske\"}', '2021-11-15 09:36:16', 90, '3a29994e-8dba-4273-8391-33d4ac9db000', 'maske', NULL, 0, 1, 0, 1, 60, '[]', NULL, 0),
-(330, '{\"de_DE\":\"Grundst\\u00fcck\"}', '2021-11-15 10:19:19', 91, '62ae2346-e0e9-4665-b9d0-5b556868e386', 'grundstueck', NULL, 0, 1, 1, 0, 10, '[]', NULL, 0),
-(331, '{\"de_DE\":\"Haustyp\"}', '2021-11-15 10:19:26', 91, 'd0d6a683-f92a-4354-8d81-2c93663c32f7', 'haustyp', NULL, 0, 1, 1, 0, 20, '{\"de_DE\":\"Welche Art von Haus m\\u00f6chten Sie konfigurieren?\"}', NULL, 0),
-(332, '{\"de_DE\":\"Architektur\"}', '2021-11-15 10:19:38', 91, 'd68afd1b-374a-411e-a9f4-332824644a87', 'architektur', NULL, 0, 1, 1, 0, 30, '{\"de_DE\":\"Bitte w\\u00e4hlen Sie eine Architektur f\\u00fcr Ihr Haus.\"}', NULL, 0),
-(333, '{\"de_DE\":\"Dacheindeckung\"}', '2021-11-15 10:23:01', 91, '6b8c6de4-bd17-47c3-b830-48fbe159dcde', 'dacheindeckung', NULL, 0, 1, 0, 0, 40, '{\"de_DE\":\"Bitte w\\u00e4hlen Sie Ihre Dachziegel aus\"}', NULL, 0),
-(334, '{\"de_DE\":\"Fu\\u00dfbodenbel\\u00e4ge\"}', '2021-11-15 10:23:20', 91, '0aedc430-7bfe-473e-801d-725bcd101a67', 'fussbodenbelaege', NULL, 1, 1, 1, 0, 50, '{\"de_DE\":\"W\\u00e4hlen Sie einen oder mehrere Fu\\u00dfb\\u00f6den, die im Haus verlegt werden sollen.<br>\\n<em>K\\u00fcche und Bad werden nach wunsch geflie\\u00dft und werden hier nicht ausgew\\u00e4hlt<\\/em>\"}', NULL, 0),
-(335, '{\"de_DE\":\"Heizung\"}', '2021-11-15 10:23:26', 91, '3bc3efee-9448-48fa-a81f-68eab3606733', 'heizung', NULL, 0, 1, 1, 0, 60, '{\"de_DE\":\"Welche Art von Heizsystem m\\u00f6chten Sie nutzen?\"}', NULL, 0),
-(336, '{\"de_DE\":\"Extras\"}', '2021-11-15 10:23:33', 91, '75b36f86-3808-4396-841f-3efb821d59ab', 'extras', NULL, 1, 1, 0, 0, 70, '{\"de_DE\":\"Sie k\\u00f6nnen sich Extras aussuchen, die Ihrem Haus hinzugef\\u00fcgt werden sollen.\"}', NULL, 0),
-(337, '{\"de_DE\":\"Upload\"}', '2021-11-15 11:33:01', 92, '1e7f093d-7882-4ce5-a510-8721cf83dd76', 'upload', NULL, 0, 0, 0, 0, 10, '[]', NULL, 0),
-(338, '{\"de_DE\":\"Farbe\"}', '2021-11-15 11:33:10', 92, 'a64f355e-5681-457f-9c26-e37256a0ae40', 'farbe', NULL, 0, 1, 1, 0, 20, NULL, NULL, 0),
-(339, '{\"de_DE\":\"Motor\"}', '2021-11-15 11:33:16', 92, '37eb48f4-e24b-4dee-934f-fc402ffeb405', 'motor', NULL, 0, 1, 1, 0, 30, '[]', NULL, 0),
-(340, '{\"de_DE\":\"Reifen\"}', '2021-11-15 11:33:21', 92, 'c5b962b5-104f-488e-ad8b-d76086f91b2e', 'reifen', NULL, 0, 1, 1, 0, 40, '[]', NULL, 0),
-(341, '{\"de_DE\":\"Felgen\"}', '2021-11-15 11:33:28', 92, 'cd65e7d4-305e-4ecf-8555-59ffd0196591', 'felgen', NULL, 0, 1, 1, 0, 50, '[]', NULL, 0),
-(342, '{\"de_DE\":\"Aufkleber\"}', '2021-11-15 11:33:34', 92, 'e43f479e-f85d-4827-8bbc-0c2895c281ac', 'aufkleber', NULL, 0, 1, 0, 0, 60, '[]', NULL, 0),
-(343, '{\"de_DE\":\"Windschutzscheibe\"}', '2021-11-15 11:33:47', 92, 'baa18b51-91d9-42bf-b0d0-75d73c27c73c', 'windschutzscheibe', NULL, 0, 1, 0, 0, 70, '[]', NULL, 0),
-(344, '{\"de_DE\":\"Paket\"}', '2021-11-15 11:33:54', 92, '71ff6fc8-4aa7-4fdb-8b63-d17534a4464f', 'paket', NULL, 0, 1, 1, 0, 80, '[]', NULL, 0),
-(345, '{\"de_DE\":\"Ma\\u00dfe\"}', '2021-11-15 13:48:47', 93, '3ba88786-f018-475f-8a91-088b156e3fb9', 'masse', NULL, 0, 1, 1, 0, 10, NULL, NULL, 0),
-(346, '{\"de_DE\":\"Hersteller\"}', '2021-11-15 13:48:54', 93, 'dbba62be-1ea2-42db-b562-50e7ed0aa74f', 'hersteller', NULL, 0, 1, 1, 0, 20, '[]', NULL, 0),
-(347, '{\"de_DE\":\"Farbe\"}', '2021-11-15 13:49:02', 93, '2e537d11-6cb2-4e89-9f95-c955572aa04a', 'farbe', NULL, 0, 1, 1, 0, 30, '{\"de_DE\":\"Alle Farben werden inklusive Grundierung aufgetragen und sind zu 100% wetterfest.\"}', NULL, 0),
-(348, '{\"de_DE\":\"Tortyp\"}', '2021-11-15 13:49:12', 93, '325d2682-f92f-475a-96d7-e0a5217c2df8', 'tortyp', NULL, 0, 1, 1, 0, 40, '[]', NULL, 0),
-(349, '{\"de_DE\":\"Bedienart\"}', '2021-11-15 13:49:21', 93, '985b6732-9dea-465c-8169-3bf785550039', 'bedienart', NULL, 0, 1, 1, 0, 50, '[]', NULL, 0),
-(350, '{\"de_DE\":\"Komfortpakete\"}', '2021-11-15 13:49:42', 93, 'b44b9c99-72f9-4e5e-b40e-30ee7a32d884', 'komfortpakete', NULL, 1, 1, 0, 0, 60, '[]', NULL, 0),
-(351, '{\"de_DE\":\"Service\"}', '2021-11-15 13:49:50', 93, 'b2c27b71-e706-4c8c-8bf2-035461ea370d', 'service', NULL, 1, 1, 0, 0, 70, '[]', NULL, 0),
-(352, '{\"de_DE\":\"Oberleder vorne\"}', '2021-11-15 14:31:50', 94, 'bbe5099f-a6cd-45c8-82e5-1d198662c8f3', 'oberleder-vorne', NULL, 0, 1, 1, 0, 10, '[]', NULL, 0),
-(353, '{\"de_DE\":\"Oberleder hinten\"}', '2021-11-15 14:32:00', 94, 'f96cef8f-dbb8-49d6-8e35-04c92b89f867', 'oberleder-hinten', NULL, 0, 1, 1, 0, 20, '[]', NULL, 0),
-(354, '{\"de_DE\":\"Rei\\u00dfverschluss\"}', '2021-11-15 14:32:09', 94, '87501fca-9bdc-4619-80bf-6524753746c3', 'reissverschluss', NULL, 0, 1, 1, 0, 30, '[]', NULL, 0),
-(355, '{\"de_DE\":\"Innenleder\"}', '2021-11-15 14:36:28', 94, '68f589a2-7228-4649-a53d-39da06808407', 'innenleder', NULL, 0, 1, 1, 0, 40, NULL, NULL, 0),
-(356, '{\"de_DE\":\"Absatz\"}', '2021-11-15 14:36:35', 94, '01033a4e-065a-4e26-9bcd-5d83d1ff8064', 'absatz', NULL, 0, 1, 1, 0, 50, '[]', NULL, 0),
-(357, '{\"de_DE\":\"Sohle\"}', '2021-11-15 14:36:41', 94, '16b5ac10-bbda-4d35-849d-edc1968111e1', 'sohle', NULL, 0, 1, 1, 0, 60, '[]', NULL, 0),
-(358, '{\"de_DE\":\"Absatzfleck\"}', '2021-11-15 14:37:03', 94, '8f2cbfa6-2bf7-4c7d-b042-777738029f23', 'absatzfleck', NULL, 0, 1, 1, 0, 70, '[]', NULL, 0);
+INSERT INTO `apto_product_section` (`surrogate_id`, `name`, `created`, `product_id`, `id`, `identifier_value`, `group_id`, `allow_multiple`, `is_active`, `is_mandatory`, `is_hidden`, `position`, `description`, `preview_image_id`, `is_zoomable`, `repeatable_type`, `repeatable_calculated_value_name`) VALUES
+(91, '{\"de_DE\":\"Fensterfarbe\"}', '2018-01-17 13:51:43', 48, 'ec6e552f-f810-4f5a-8e1f-1b125748cadd', 'fensterfarbe', NULL, 0, 1, 1, 0, 10, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Fensterrahmen aus.\"}', NULL, 0, 'Statisch', NULL),
+(92, '{\"de_DE\":\"Montage\"}', '2018-01-17 14:00:18', 48, '48562933-fed0-46ea-bfec-713f2ed6e8bd', 'montage', NULL, 0, 1, 1, 0, 20, '{\"de_DE\":\"W\\u00fcnschen Sie eine Montage mit oder ohne Rollokasten?\"}', NULL, 0, 'Statisch', NULL),
+(93, '{\"de_DE\":\"Rollofarbe\"}', '2018-01-17 14:00:26', 48, 'b5a10157-0658-4c0a-bab8-e011447408d7', 'rollofarbe', NULL, 0, 1, 1, 0, 30, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Rolladen aus.\"}', NULL, 0, 'Statisch', NULL),
+(94, '{\"de_DE\":\"Sicherheit\"}', '2018-01-17 14:00:33', 48, 'c433956d-3090-4b53-a4af-63ef48ffbc7a', 'sicherheit', NULL, 1, 1, 1, 0, 40, '{\"de_DE\":\"Einbrechern keine Chance geben!<br><br>\"}', NULL, 0, 'Statisch', NULL),
+(95, '{\"de_DE\":\"Verglasung\"}', '2018-01-17 14:00:39', 48, '8b6f95cc-37ab-42ee-9278-9a10633a79d7', 'verglasung', NULL, 0, 1, 1, 0, 50, '{\"de_DE\":\"Isolierverglasung nach DIN EN 673\"}', NULL, 0, 'Statisch', NULL),
+(96, '{\"de_DE\":\"Schallschutzglas\"}', '2018-01-17 14:00:44', 48, '6f19227d-54c2-4d1d-9b4b-1277133602ee', 'schallschutzglas', NULL, 0, 1, 1, 0, 60, '[]', NULL, 0, 'Statisch', NULL),
+(97, '{\"de_DE\":\"Rollobedienung\"}', '2018-01-17 14:00:49', 48, 'da4433c1-c11a-42e9-afb0-401464f5d736', 'rollofeature', NULL, 0, 1, 0, 0, 70, '{\"de_DE\":\"\"}', NULL, 0, 'Statisch', NULL),
+(98, '{\"de_DE\":\"Ma\\u00dfe\"}', '2018-01-17 14:00:54', 48, '3cbf6e24-4516-4407-872d-1ff8c3f63005', 'masse', NULL, 0, 1, 1, 0, 0, '[]', NULL, 0, 'Statisch', NULL),
+(308, '{\"de_DE\":\"Fensterfarbe\"}', '2020-09-15 20:40:22', 88, 'a12d9d26-4d57-4bf0-89dd-1d75cf66b8de', 'fensterfarbe', 1, 0, 1, 1, 0, 10, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Fensterrahmen aus.\"}', NULL, 0, 'Statisch', NULL),
+(309, '{\"de_DE\":\"Montage\"}', '2020-09-15 20:40:22', 88, '67790e03-2e2c-4e13-81a6-b52dc3d65982', 'montage', 2, 0, 0, 0, 0, 20, '{\"de_DE\":\"W\\u00fcnschen Sie eine Montage mit oder ohne Rollokasten?\"}', NULL, 0, 'Statisch', NULL),
+(310, '{\"de_DE\":\"Rollofarbe\"}', '2020-09-15 20:40:22', 88, 'e6e01110-f542-4529-b328-f24f8f91c089', 'rollofarbe', 2, 0, 1, 1, 0, 30, '{\"de_DE\":\"W\\u00e4hlen Sie eine Farbe f\\u00fcr den Rolladen aus.\"}', NULL, 0, 'Statisch', NULL),
+(311, '{\"de_DE\":\"Sicherheit\"}', '2020-09-15 20:40:22', 88, '9cfd8b92-151b-4467-8b3c-9435047bedb6', 'sicherheit', 2, 1, 1, 1, 0, 40, '{\"de_DE\":\"Einbrechern keine Chance geben!<br><br>\"}', NULL, 0, 'Statisch', NULL),
+(312, '{\"de_DE\":\"Verglasung\"}', '2020-09-15 20:40:22', 88, 'c44df701-3fc1-4df3-816b-67ccc8ca6374', 'verglasung', 3, 0, 1, 1, 0, 50, '{\"de_DE\":\"Isolierverglasung nach DIN EN 673\"}', NULL, 0, 'Statisch', NULL),
+(313, '{\"de_DE\":\"Schallschutzglas\"}', '2020-09-15 20:40:22', 88, '369f053b-2fe6-4c66-910d-22d11cc18308', 'schallschutzglas', 3, 0, 1, 1, 0, 60, '[]', NULL, 0, 'Statisch', NULL),
+(314, '{\"de_DE\":\"Rollobedienung\"}', '2020-09-15 20:40:22', 88, '3c84feb5-1234-4b96-8beb-3f4cab56cfba', 'rollofeature', 3, 0, 1, 0, 0, 70, '{\"de_DE\":\"\"}', NULL, 0, 'Statisch', NULL),
+(315, '{\"de_DE\":\"Ma\\u00dfe\"}', '2020-09-15 20:40:22', 88, '581d85d4-e9ea-4ca6-9a1f-0c9cecda0ad6', 'masse', 1, 0, 1, 1, 0, 0, '[]', NULL, 0, 'Statisch', NULL),
+(316, '{\"de_DE\":\"Rollogr\\u00f6\\u00dfe\"}', '2020-09-24 19:49:11', 48, '071bd613-4be6-4986-8eb9-602f58b1d072', 'rollogroesse', NULL, 0, 1, 1, 0, 35, '{\"de_DE\":\"\"}', NULL, 0, 'Statisch', NULL),
+(317, '{\"de_DE\":\"Sonderw\\u00fcnsche\"}', '2020-09-24 19:58:36', 48, '1864ad13-a7b2-4767-bba7-8b52f969e935', 'sonderwuensche', NULL, 1, 1, 0, 0, 80, '[]', NULL, 0, 'Statisch', NULL),
+(324, '{\"de_DE\":\"farbe\"}', '2021-11-15 09:33:49', 90, '60df53e9-36bd-4131-b329-2dee2f7f0724', 'farbe', NULL, 0, 1, 0, 0, 10, '[]', NULL, 0, 'Statisch', NULL),
+(325, '{\"de_DE\":\"Farbe Innenseite\"}', '2021-11-15 09:34:05', 90, '201866c1-b4c6-416f-9a01-77b50749dd28', 'innenseite', NULL, 0, 1, 0, 0, 20, '[]', NULL, 0, 'Statisch', NULL),
+(328, '{\"de_DE\":\"Girl\\u00b4s Day Logo\"}', '2021-11-15 09:36:03', 90, 'd2637258-bbf7-44ef-ad63-16ec180a53d7', 'girls-day-logo', NULL, 0, 1, 0, 0, 50, '[]', NULL, 0, 'Statisch', NULL),
+(329, '{\"de_DE\":\"Maske\"}', '2021-11-15 09:36:16', 90, '3a29994e-8dba-4273-8391-33d4ac9db000', 'maske', NULL, 0, 1, 0, 1, 60, '[]', NULL, 0, 'Statisch', NULL),
+(330, '{\"de_DE\":\"Grundst\\u00fcck\"}', '2021-11-15 10:19:19', 91, '62ae2346-e0e9-4665-b9d0-5b556868e386', 'grundstueck', NULL, 0, 1, 1, 0, 10, '[]', NULL, 0, 'Statisch', NULL),
+(331, '{\"de_DE\":\"Haustyp\"}', '2021-11-15 10:19:26', 91, 'd0d6a683-f92a-4354-8d81-2c93663c32f7', 'haustyp', NULL, 0, 1, 1, 0, 20, '{\"de_DE\":\"Welche Art von Haus m\\u00f6chten Sie konfigurieren?\"}', NULL, 0, 'Statisch', NULL),
+(332, '{\"de_DE\":\"Architektur\"}', '2021-11-15 10:19:38', 91, 'd68afd1b-374a-411e-a9f4-332824644a87', 'architektur', NULL, 0, 1, 1, 0, 30, '{\"de_DE\":\"Bitte w\\u00e4hlen Sie eine Architektur f\\u00fcr Ihr Haus.\"}', NULL, 0, 'Statisch', NULL),
+(333, '{\"de_DE\":\"Dacheindeckung\"}', '2021-11-15 10:23:01', 91, '6b8c6de4-bd17-47c3-b830-48fbe159dcde', 'dacheindeckung', NULL, 0, 1, 0, 0, 40, '{\"de_DE\":\"Bitte w\\u00e4hlen Sie Ihre Dachziegel aus\"}', NULL, 0, 'Statisch', NULL),
+(334, '{\"de_DE\":\"Fu\\u00dfbodenbel\\u00e4ge\"}', '2021-11-15 10:23:20', 91, '0aedc430-7bfe-473e-801d-725bcd101a67', 'fussbodenbelaege', NULL, 1, 1, 1, 0, 50, '{\"de_DE\":\"W\\u00e4hlen Sie einen oder mehrere Fu\\u00dfb\\u00f6den, die im Haus verlegt werden sollen.<br>\\n<em>K\\u00fcche und Bad werden nach wunsch geflie\\u00dft und werden hier nicht ausgew\\u00e4hlt<\\/em>\"}', NULL, 0, 'Statisch', NULL),
+(335, '{\"de_DE\":\"Heizung\"}', '2021-11-15 10:23:26', 91, '3bc3efee-9448-48fa-a81f-68eab3606733', 'heizung', NULL, 0, 1, 1, 0, 60, '{\"de_DE\":\"Welche Art von Heizsystem m\\u00f6chten Sie nutzen?\"}', NULL, 0, 'Statisch', NULL),
+(336, '{\"de_DE\":\"Extras\"}', '2021-11-15 10:23:33', 91, '75b36f86-3808-4396-841f-3efb821d59ab', 'extras', NULL, 1, 1, 0, 0, 70, '{\"de_DE\":\"Sie k\\u00f6nnen sich Extras aussuchen, die Ihrem Haus hinzugef\\u00fcgt werden sollen.\"}', NULL, 0, 'Statisch', NULL),
+(337, '{\"de_DE\":\"Upload\"}', '2021-11-15 11:33:01', 92, '1e7f093d-7882-4ce5-a510-8721cf83dd76', 'upload', NULL, 0, 0, 0, 0, 10, '[]', NULL, 0, 'Statisch', NULL),
+(338, '{\"de_DE\":\"Farbe\"}', '2021-11-15 11:33:10', 92, 'a64f355e-5681-457f-9c26-e37256a0ae40', 'farbe', NULL, 0, 1, 1, 0, 20, NULL, NULL, 0, 'Statisch', NULL),
+(339, '{\"de_DE\":\"Motor\"}', '2021-11-15 11:33:16', 92, '37eb48f4-e24b-4dee-934f-fc402ffeb405', 'motor', NULL, 0, 1, 1, 0, 30, '[]', NULL, 0, 'Statisch', NULL),
+(340, '{\"de_DE\":\"Reifen\"}', '2021-11-15 11:33:21', 92, 'c5b962b5-104f-488e-ad8b-d76086f91b2e', 'reifen', NULL, 0, 1, 1, 0, 40, '[]', NULL, 0, 'Statisch', NULL),
+(341, '{\"de_DE\":\"Felgen\"}', '2021-11-15 11:33:28', 92, 'cd65e7d4-305e-4ecf-8555-59ffd0196591', 'felgen', NULL, 0, 1, 1, 0, 50, '[]', NULL, 0, 'Statisch', NULL),
+(342, '{\"de_DE\":\"Aufkleber\"}', '2021-11-15 11:33:34', 92, 'e43f479e-f85d-4827-8bbc-0c2895c281ac', 'aufkleber', NULL, 0, 1, 0, 0, 60, '[]', NULL, 0, 'Statisch', NULL),
+(343, '{\"de_DE\":\"Windschutzscheibe\"}', '2021-11-15 11:33:47', 92, 'baa18b51-91d9-42bf-b0d0-75d73c27c73c', 'windschutzscheibe', NULL, 0, 1, 0, 0, 70, '[]', NULL, 0, 'Statisch', NULL),
+(344, '{\"de_DE\":\"Paket\"}', '2021-11-15 11:33:54', 92, '71ff6fc8-4aa7-4fdb-8b63-d17534a4464f', 'paket', NULL, 0, 1, 1, 0, 80, '[]', NULL, 0, 'Statisch', NULL),
+(345, '{\"de_DE\":\"Ma\\u00dfe\"}', '2021-11-15 13:48:47', 93, '3ba88786-f018-475f-8a91-088b156e3fb9', 'masse', NULL, 0, 1, 1, 0, 10, NULL, NULL, 0, 'Statisch', NULL),
+(346, '{\"de_DE\":\"Hersteller\"}', '2021-11-15 13:48:54', 93, 'dbba62be-1ea2-42db-b562-50e7ed0aa74f', 'hersteller', NULL, 0, 1, 1, 0, 20, '[]', NULL, 0, 'Statisch', NULL),
+(347, '{\"de_DE\":\"Farbe\"}', '2021-11-15 13:49:02', 93, '2e537d11-6cb2-4e89-9f95-c955572aa04a', 'farbe', NULL, 0, 1, 1, 0, 30, '{\"de_DE\":\"Alle Farben werden inklusive Grundierung aufgetragen und sind zu 100% wetterfest.\"}', NULL, 0, 'Statisch', NULL),
+(348, '{\"de_DE\":\"Tortyp\"}', '2021-11-15 13:49:12', 93, '325d2682-f92f-475a-96d7-e0a5217c2df8', 'tortyp', NULL, 0, 1, 1, 0, 40, '[]', NULL, 0, 'Statisch', NULL),
+(349, '{\"de_DE\":\"Bedienart\"}', '2021-11-15 13:49:21', 93, '985b6732-9dea-465c-8169-3bf785550039', 'bedienart', NULL, 0, 1, 1, 0, 50, '[]', NULL, 0, 'Statisch', NULL),
+(350, '{\"de_DE\":\"Komfortpakete\"}', '2021-11-15 13:49:42', 93, 'b44b9c99-72f9-4e5e-b40e-30ee7a32d884', 'komfortpakete', NULL, 1, 1, 0, 0, 60, '[]', NULL, 0, 'Statisch', NULL),
+(351, '{\"de_DE\":\"Service\"}', '2021-11-15 13:49:50', 93, 'b2c27b71-e706-4c8c-8bf2-035461ea370d', 'service', NULL, 1, 1, 0, 0, 70, '[]', NULL, 0, 'Statisch', NULL),
+(352, '{\"de_DE\":\"Oberleder vorne\"}', '2021-11-15 14:31:50', 94, 'bbe5099f-a6cd-45c8-82e5-1d198662c8f3', 'oberleder-vorne', NULL, 0, 1, 1, 0, 10, '[]', NULL, 0, 'Statisch', NULL),
+(353, '{\"de_DE\":\"Oberleder hinten\"}', '2021-11-15 14:32:00', 94, 'f96cef8f-dbb8-49d6-8e35-04c92b89f867', 'oberleder-hinten', NULL, 0, 1, 1, 0, 20, '[]', NULL, 0, 'Statisch', NULL),
+(354, '{\"de_DE\":\"Rei\\u00dfverschluss\"}', '2021-11-15 14:32:09', 94, '87501fca-9bdc-4619-80bf-6524753746c3', 'reissverschluss', NULL, 0, 1, 1, 0, 30, '[]', NULL, 0, 'Statisch', NULL),
+(355, '{\"de_DE\":\"Innenleder\"}', '2021-11-15 14:36:28', 94, '68f589a2-7228-4649-a53d-39da06808407', 'innenleder', NULL, 0, 1, 1, 0, 40, NULL, NULL, 0, 'Statisch', NULL),
+(356, '{\"de_DE\":\"Absatz\"}', '2021-11-15 14:36:35', 94, '01033a4e-065a-4e26-9bcd-5d83d1ff8064', 'absatz', NULL, 0, 1, 1, 0, 50, '[]', NULL, 0, 'Statisch', NULL),
+(357, '{\"de_DE\":\"Sohle\"}', '2021-11-15 14:36:41', 94, '16b5ac10-bbda-4d35-849d-edc1968111e1', 'sohle', NULL, 0, 1, 1, 0, 60, '[]', NULL, 0, 'Statisch', NULL),
+(358, '{\"de_DE\":\"Absatzfleck\"}', '2021-11-15 14:37:03', 94, '8f2cbfa6-2bf7-4c7d-b042-777738029f23', 'absatzfleck', NULL, 0, 1, 1, 0, 70, '[]', NULL, 0, 'Statisch', NULL);
 
 -- --------------------------------------------------------
 
@@ -4815,8 +4818,8 @@ CREATE TABLE `apto_user_role_to_user_role` (
 --
 
 INSERT INTO `apto_user_role_to_user_role` (`child_id`, `parent_id`) VALUES
-(23, 2),
-(22, 23);
+(22, 23),
+(23, 2);
 
 -- --------------------------------------------------------
 
@@ -4846,7 +4849,7 @@ CREATE TABLE `plugin_image_upload_canvas` (
   `created` datetime NOT NULL,
   `id` char(36) NOT NULL,
   `identifier_value` varchar(255) NOT NULL,
-  `motive_settings` longtext NOT NULL DEFAULT 'a:3:{s:6:"active";b:0;s:11:"previewSize";i:250;s:6:"folder";N;}' COMMENT '(DC2Type:array)'
+  `motive_settings` longtext NOT NULL COMMENT '(DC2Type:array)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
