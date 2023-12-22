@@ -69,7 +69,6 @@
 		"no-confusing-arrow": ["off"],
 		"lines-between-class-members": ["off"],
     "no-continue": "off",
-    "no-plusplus": "off",
-    "arrow-parens": ["error", "as-needed"] // arrow function argument can be without parenteces
+    "no-plusplus": "off"
   }
 }
