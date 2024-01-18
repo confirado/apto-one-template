@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "2.1.56",
+            "version": "2.1.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "8802d22518b05f6e811fe83833b95acc92dd7b4a"
+                "reference": "82daed0598d5190657f60969d7903fb2270bc91b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/8802d22518b05f6e811fe83833b95acc92dd7b4a",
-                "reference": "8802d22518b05f6e811fe83833b95acc92dd7b4a",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/82daed0598d5190657f60969d7903fb2270bc91b",
+                "reference": "82daed0598d5190657f60969d7903fb2270bc91b",
                 "shasum": ""
             },
             "require": {
@@ -35,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.56",
+                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.57",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2023-12-12T21:08:10+00:00"
+            "time": "2024-01-18T14:51:30+00:00"
         },
         {
             "name": "brick/math",

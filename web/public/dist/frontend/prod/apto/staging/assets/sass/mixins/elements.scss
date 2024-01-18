@@ -387,3 +387,16 @@
         }
     }
 }
+
+@mixin apto-card($hover: false) {
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-background-card);
+
+    @if($hover == true) {
+        cursor: pointer;
+        &:hover {
+            background-color: var(--color-background-card-hover);
+        }
+    }
+}
