@@ -329,12 +329,11 @@
 
 @mixin buttons($screen-size: 'mobile') {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--button-gap);
 
     @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
         justify-self: flex-end;
-        flex-direction: row;
         justify-content: flex-end;
     }
 }
