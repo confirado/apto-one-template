@@ -6,13 +6,13 @@ if (process.env['APTO_CYPRESS_ENV'] === 'dev') {
 }
 
 const folders = {
-  specPattern: path + '/cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
-  downloadsFolder: path + '/cypress/Tests/_downloads',
-  fixturesFolder: path + '/cypress/_fixtures',
-  supportFolder: path + '/cypress/_support',
-  supportFile: path + '/cypress/_support/index.ts',
-  videosFolder: path + '/cypress/_videos',
-  screenshotsFolder: path + '/cypress/_screenshots',
+  specPattern: path + 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+  downloadsFolder: path + 'cypress/Tests/_downloads',
+  fixturesFolder: path + 'cypress/_fixtures',
+  supportFolder: path + 'cypress/_support',
+  supportFile: path + 'cypress/_support/index.ts',
+  videosFolder: path + 'cypress/_videos',
+  screenshotsFolder: path + 'cypress/_screenshots',
 };
 
 export default defineConfig({
