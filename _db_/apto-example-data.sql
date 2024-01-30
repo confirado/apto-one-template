@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 12, 2023 at 10:17 PM
+-- Generation Time: Jan 18, 2024 at 03:59 PM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.1.26
 
@@ -726,7 +726,7 @@ INSERT INTO `apto_content_snippet` (`surrogate_id`, `parent_id`, `created`, `nam
 (2, NULL, '2019-02-04 10:11:54', 'AptoLoginController', 1, '[]', '211dc12e-7e01-4d93-a262-52fbaf9e50a5', 0),
 (3, NULL, '2019-02-04 10:12:05', 'aptoLogo', 1, '[]', '67093d07-396c-4de8-b575-ce45bc9a30d1', 0),
 (4, NULL, '2019-02-04 10:12:20', 'AptoGuestConfigurationDialog', 1, '[]', 'a2c7ad3d-5b4f-42a6-9655-e5b731283f7f', 0),
-(5, 3, '2019-02-04 10:12:44', 'link', 1, '{\"de_DE\":\"http:\\/\\/grobi.projektversion.de\\/apto-project-template\\/web\\/frontend_dev.php\\/#!\\/\"}', 'b06a83c7-ec65-42f7-bdee-cd1b191303a6', 0),
+(5, 3, '2019-02-04 10:12:44', 'link', 1, '{\"de_DE\":\"\"}', 'b06a83c7-ec65-42f7-bdee-cd1b191303a6', 0),
 (6, 2, '2019-02-04 10:12:55', 'form', 1, '[]', 'a18a778f-aee5-4e57-904e-186e5d34b4ae', 0),
 (7, 6, '2019-02-04 10:13:03', 'login', 1, '{\"de_DE\":\"Anmelden\"}', '4762a456-7dae-4809-a708-292b226e01eb', 0),
 (8, 6, '2019-02-04 10:13:07', 'mail', 1, '{\"de_DE\":\"Ihre E-Mail Adresse\"}', '9691eae8-2cca-4a6c-b50f-c1d8a088917a', 0),
@@ -1268,7 +1268,8 @@ INSERT INTO `apto_event_store` (`event_id`, `event_body`, `type_name`, `occurred
 (24, '{\"active\":true,\"id\":\"29eab133-ba26-4a29-be64-c5669da0137c\",\"occurredOn\":\"2023-02-28T19:41:52+01:00\"}', 'Apto\\Base\\Domain\\Backend\\Model\\User\\UserActiveUpdated', '2023-02-28 19:41:52', NULL),
 (25, '{\"rte\":\"trumbowyg\",\"id\":\"29eab133-ba26-4a29-be64-c5669da0137c\",\"occurredOn\":\"2023-02-28T19:41:52+01:00\"}', 'Apto\\Base\\Domain\\Backend\\Model\\User\\UserRteUpdated', '2023-02-28 19:41:52', NULL),
 (26, '{\"userRoles\":[\"80368e25-ab66-4833-aa4c-b1496e3aa1b4\"],\"id\":\"29eab133-ba26-4a29-be64-c5669da0137c\",\"occurredOn\":\"2023-02-28T19:41:52+01:00\"}', 'Apto\\Base\\Domain\\Backend\\Model\\User\\UserUserRolesUpdated', '2023-02-28 19:41:52', NULL),
-(27, '{\"operatorName\":\"\",\"id\":\"133c31ee-7fd3-4032-a27d-a6959dd31aac\",\"occurredOn\":\"2023-02-28T19:42:05+01:00\"}', 'Apto\\Catalog\\Domain\\Core\\Model\\Shop\\ShopOperatorNameUpdated', '2023-02-28 19:42:05', 'superadmin');
+(27, '{\"operatorName\":\"\",\"id\":\"133c31ee-7fd3-4032-a27d-a6959dd31aac\",\"occurredOn\":\"2023-02-28T19:42:05+01:00\"}', 'Apto\\Catalog\\Domain\\Core\\Model\\Shop\\ShopOperatorNameUpdated', '2023-02-28 19:42:05', 'superadmin'),
+(28, '{\"content\":{\"de_DE\":\"\"},\"id\":\"b06a83c7-ec65-42f7-bdee-cd1b191303a6\",\"occurredOn\":\"2024-01-18T15:58:28+01:00\"}', 'Apto\\Base\\Domain\\Core\\Model\\ContentSnippet\\ContentSnippetContentChanged', '2024-01-18 15:58:28', 'superadmin');
 
 -- --------------------------------------------------------
 
@@ -6242,7 +6243,7 @@ ALTER TABLE `apto_element_select_box_item`
 -- AUTO_INCREMENT for table `apto_event_store`
 --
 ALTER TABLE `apto_event_store`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `apto_filter_category`

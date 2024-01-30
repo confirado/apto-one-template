@@ -271,7 +271,7 @@
             align-items: center;
 
             h4 {
-                font-size: 22px;
+                font-size: 18px;
                 font-weight: 600;
                 color: var(--color-text);
                 text-align: center;
@@ -289,6 +289,7 @@
 
             h4 {
                 text-align: left;
+                font-size: 22px;
             }
         }
     }
@@ -328,12 +329,11 @@
 
 @mixin buttons($screen-size: 'mobile') {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--button-gap);
 
     @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
         justify-self: flex-end;
-        flex-direction: row;
         justify-content: flex-end;
     }
 }
@@ -373,7 +373,7 @@
         right: calc(-1*($size/2 - 2px));
     }
 
-    @if ($position == 'cenetr') {
+    @if ($position == 'center') {
         top: 0;
         right: 0;
     }

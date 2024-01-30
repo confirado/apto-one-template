@@ -16,12 +16,19 @@
         "... hint ...";
 }
 
-@mixin name() {
+@mixin name($screen-size: 'mobile') {
     font-weight: 500;
     height: min-content;
-    font-size: 18px;
     color: var(--color-text);
     padding-bottom: var(--input-elements-gap);
+
+    @if($screen-size == 'mobile') {
+          font-size: 16px;
+    }
+
+    @if($screen-size == 'tablet') {
+        font-size: 18px;
+    }
 }
 
 @mixin prefix() {
