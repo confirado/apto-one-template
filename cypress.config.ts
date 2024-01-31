@@ -1,8 +1,10 @@
 import { defineConfig } from "cypress";
 
 let path = 'vendor/apto-one/core/Tests/';
+let componentTestPath = 'vendor/apto-one/core/Client/';
 if (process.env['APTO_CYPRESS_ENV'] === 'dev') {
   path = 'src/apto-one-core/Tests/';
+  componentTestPath = 'src/apto-one-core/Client/';
 }
 
 const folders = {
@@ -36,6 +38,13 @@ export default defineConfig({
       framework: "angular",
       bundler: "webpack",
     },
-    specPattern: "src/apto-one-core/Client/*.cy.ts",
+    specPattern: componentTestPath + '**/*.cy.ts',
+    indexHtmlFile: path + '/cypress/_support/component-index.html',
+    downloadsFolder: path + 'cypress/Tests/_downloads',
+    fixturesFolder: path + 'cypress/_fixtures',
+    supportFolder: path + 'cypress/_support',
+    supportFile: path + 'cypress/_support/index.ts',
+    videosFolder: path + 'cypress/_videos',
+    screenshotsFolder: path + 'cypress/_screenshots',
   },
 });
