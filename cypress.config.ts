@@ -27,6 +27,15 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
+
   viewportWidth: 1920,
   viewportHeight: 1200,
+
+  component: {
+    devServer: {
+      framework: "angular",
+      bundler: "webpack",
+    },
+    specPattern: "**/*.cy.ts",
+  },
 });
