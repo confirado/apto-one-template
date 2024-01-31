@@ -77,7 +77,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Apto\\": "src/Apto/"
+            "Apto\\": "src/Apto/",
+            "Apto\\Base\\": "src/apto-one-core/Apto/Base/",
+            "Apto\\Catalog\\": "src/apto-one-core/Apto/Catalog/",
+            "Apto\\Plugins\\": "src/apto-one-core/Apto/Plugins/"
         }
     },
     "autoload-apto-example-use-for-development": {
