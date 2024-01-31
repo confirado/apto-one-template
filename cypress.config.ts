@@ -36,6 +36,6 @@ export default defineConfig({
       framework: "angular",
       bundler: "webpack",
     },
-    specPattern: "**/*.cy.ts",
+    specPattern: "src/apto-one-core/Client/*.cy.ts",
   },
 });
