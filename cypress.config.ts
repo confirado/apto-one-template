@@ -33,18 +33,19 @@ export default defineConfig({
   viewportWidth: 1920,
   viewportHeight: 1200,
 
-  component: {
-    devServer: {
-      framework: "angular",
-      bundler: "webpack",
-    },
-    specPattern: componentTestPath + '**/*.cy.ts',
-    indexHtmlFile: path + '/cypress/_support/component-index.html',
-    downloadsFolder: path + 'cypress/Tests/_downloads',
-    fixturesFolder: path + 'cypress/_fixtures',
-    supportFolder: path + 'cypress/_support',
-    supportFile: path + 'cypress/_support/index.ts',
-    videosFolder: path + 'cypress/_videos',
-    screenshotsFolder: path + 'cypress/_screenshots',
-  },
+  // these configs are for the component testing, do not uncomment because they cause issue in e2e testing
+  // component: {
+  //   devServer: {
+  //     framework: "angular",
+  //     bundler: "webpack",
+  //   },
+  //   specPattern: componentTestPath + '**/*.cy.ts',
+  //   indexHtmlFile: path + '/cypress/_support/component-index.html',
+  //   downloadsFolder: path + 'cypress/Tests/_downloads',
+  //   fixturesFolder: path + 'cypress/_fixtures',
+  //   supportFolder: path + 'cypress/_support',
+  //   supportFile: path + 'cypress/_support/index.ts',
+  //   videosFolder: path + 'cypress/_videos',
+  //   screenshotsFolder: path + 'cypress/_screenshots',
+  // },
 });
