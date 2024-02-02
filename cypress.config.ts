@@ -19,11 +19,18 @@ const folders = {
 
 export default defineConfig({
   e2e: {
+    pageLoadTimeout: 4000, // default 60.000
+    requestTimeout: 4000, // default 50.000
+    responseTimeout: 4000, // 30.000
+
     ...folders,
+    // testIsolation: false,
     env: {
+      // keepLocalStorageForTestSuites: true,
       baseUrl: 'http://grobi.projektversion.de/apto-one-template/web/',
       shopwareUrl: 'http://grobi.projektversion.de/shopware65/public/template/AptoConnector/',
       mediaUrl: 'http://grobi.projektversion.de/apto-one-template/web/public/media/',
+      // CHROME_EXTRA_LAUNCH_ARGS: ''
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
