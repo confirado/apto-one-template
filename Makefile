@@ -59,17 +59,17 @@ open-cypress:
 
 # Run this for local
 open-cypress-dev:
-	sed -i 's/\(-cypress\)*//g' .env.local
+	sed -i"" "s/\(-cypress\)*//g" .env.local
 	php bin/console cache:clear
 	php bin/console doctrine:schema:update --force
 	@$(MAKE) prepare-cypress-db
-	sed -i 's/^DATABASE_URL\(.*:3306\)\([^\?.]*\)\(.*\)/DATABASE_URL\1\2-cypress\3/g' .env.local
+	sed -i"" "s/^DATABASE_URL\(.*:3306\)\([^\?.]*\)\(.*\)/DATABASE_URL\1\2-cypress\3/g" .env.local
 	@$(MAKE) prepare-cypress-fixtures
 	php bin/console cache:clear
 	npm run-script cypress:open:dev
 
 close-cypress:
-	sed -i 's/\(-cypress\)*//g' .env.local
+	sed -i"" "s/\(-cypress\)*//g" .env.local
 	php bin/console doctrine:schema:update --force
 	php bin/console cache:clear
 	pkill -2 Cypress
