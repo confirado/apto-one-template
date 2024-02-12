@@ -94,6 +94,10 @@ export default class AptoPluginCollector {
             const plugin = this.plugins[i];
 
             this.tsConfigPaths.compilerOptions.paths['@' + plugin.config.id + '/*'] = [ plugin.path + '*' ];
+
+            for (const alias of plugin.config.aliases || []) {
+                this.tsConfigPaths.compilerOptions.paths[alias.alias] = [ plugin.path + alias.path ];
+            }
         }
     }
 
