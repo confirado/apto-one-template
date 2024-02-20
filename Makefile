@@ -1,3 +1,5 @@
+OS := $(shell uname)
+
 build:
 	docker-compose --env-file .env.docker down
 	docker-compose --env-file .env.docker up -d --build
@@ -68,7 +70,12 @@ open-cypress-dev:
 	npm run-script cypress:open:dev
 
 close-cypress:
+ifeq ($(OS), Linux)
 	sed -i 's/\(-cypress\)*//g' .env.local
+endif
+ifeq ($(OS), Darwin)
+	sed -i"" "s/\(-cypress\)*//g" .env.local
+endif
 	php bin/console doctrine:schema:update --force
 	php bin/console cache:clear
 	pkill -2 Cypress
