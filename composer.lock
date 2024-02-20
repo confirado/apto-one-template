@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2001c448cedc945ddc0d5147f20b84c",
+    "content-hash": "fc9e7d195f54c7a4abe493183dadd23c",
     "packages": [
         {
             "name": "apto-one/core",
-            "version": "2.1.85",
+            "version": "2.1.86",
             "source": {
                 "type": "git",
                 "url": "https://github.com/confirado/apto-one-core.git",
-                "reference": "34a1cc1cf3e4dbe491969036e7a55194459b84d9"
+                "reference": "9fbf99714c77169aef0a5024d6728c2cce082bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/34a1cc1cf3e4dbe491969036e7a55194459b84d9",
-                "reference": "34a1cc1cf3e4dbe491969036e7a55194459b84d9",
+                "url": "https://api.github.com/repos/confirado/apto-one-core/zipball/9fbf99714c77169aef0a5024d6728c2cce082bd6",
+                "reference": "9fbf99714c77169aef0a5024d6728c2cce082bd6",
                 "shasum": ""
             },
             "require": {
@@ -35,10 +35,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.85",
+                "source": "https://github.com/confirado/apto-one-core/tree/v2.1.86",
                 "issues": "https://github.com/confirado/apto-one-core/issues"
             },
-            "time": "2024-02-19T17:55:02+00:00"
+            "time": "2024-02-20T19:28:32+00:00"
         },
         {
             "name": "brick/math",
