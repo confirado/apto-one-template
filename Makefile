@@ -74,7 +74,7 @@ ifeq ($(OS), Linux)
 	sed -i 's/\(-cypress\)*//g' .env.local
 endif
 ifeq ($(OS), Darwin)
-	sed -i"" "s/\(-cypress\)*//g" .env.local
+	sed -i "" "s/\(-cypress\)*//g" .env.local
 endif
 	php bin/console doctrine:schema:update --force
 	php bin/console cache:clear
