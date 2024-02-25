@@ -1,3 +1,5 @@
+OS := $(shell uname)
+
 build:
 	docker-compose --env-file .env.docker down
 	docker-compose --env-file .env.docker up -d --build
@@ -59,23 +61,27 @@ open-cypress:
 
 # Run this for local
 open-cypress-dev:
-	sed -i"" "s/\(-cypress\)*//g" .env.local
 	php bin/console cache:clear
 	php bin/console doctrine:schema:update --force
 	@$(MAKE) prepare-cypress-db
-	sed -i"" "s/^DATABASE_URL\(.*:3306\)\([^\?.]*\)\(.*\)/DATABASE_URL\1\2-cypress\3/g" .env.local
-	@$(MAKE) prepare-cypress-fixtures
+	@#$(MAKE) prepare-cypress-fixtures
 	php bin/console cache:clear
+	php bin/console doctrine:schema:update --force
 	npm run-script cypress:open:dev
 
 close-cypress:
+ifeq ($(OS), Linux)
+	sed -i 's/\(-cypress\)*//g' .env.local
+endif
+ifeq ($(OS), Darwin)
 	sed -i"" "s/\(-cypress\)*//g" .env.local
+endif
 	php bin/console doctrine:schema:update --force
 	php bin/console cache:clear
 	pkill -2 Cypress
 
 prepare-cypress-db:
-	php bin/console doctrine:schema:update --force
+	#php bin/console doctrine:schema:update --force
 	php bin/console apto:test:prepare-db
 
 prepare-cypress-fixtures:
