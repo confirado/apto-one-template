@@ -7,6 +7,7 @@ import { environment } from './environments/environment';
 declare global {
   interface Window {
     APTO_API: AptoApi;
+    AptoInline: AptoInline;
   }
 }
 
@@ -19,6 +20,16 @@ interface AptoApi {
   thumb: string,
   media: string,
   client: string
+}
+
+interface AptoInline {
+  productId: string;
+  configurationId: string;
+  configurationType: string;
+  additionalData: {
+    swProductId: string;
+    swProductUrl: string;
+  };
 }
 
 if (environment.production) {
