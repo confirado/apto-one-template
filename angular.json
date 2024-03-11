@@ -32,7 +32,6 @@
             ],
             "styles": [
               "apps/backend/src/styles.scss"
-//if shopware inline              "apps/backend/src/styles-inline.scss"
             ],
             "scripts": [],
             "fileReplacements": [],
@@ -145,7 +144,6 @@
             ],
             "styles": [
               "apps/frontend/src/styles.scss"
-//if shopware inline     "apps/frontend/src/styles-inline.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

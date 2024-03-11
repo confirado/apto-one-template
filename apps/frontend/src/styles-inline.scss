@@ -1,6 +1,6 @@
 @import "form-inputs";
-@import 'mat_overwrite';
-@import './fonts.scss';
+@import 'mat_overwrite-inline';
+@import 'fonts-inline';
 @import 'tailwindcss/base';
 @import 'tailwindcss/utilities';
 
@@ -84,7 +84,8 @@
     --button-desktop-height: 62px;
 }
 
-apto-frontend {
+apto-frontend,
+.cdk-overlay-container {
     font-family: var(--main-font-1);
     background-color: var(--color-background);
 
