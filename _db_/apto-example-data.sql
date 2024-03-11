@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2024 at 03:59 PM
+-- Generation Time: Mar 11, 2024 at 05:47 PM
 -- Server version: 11.2.2-MariaDB
 -- PHP Version: 8.1.26
 
@@ -1889,6 +1889,21 @@ CREATE TABLE `apto_order_configuration` (
 INSERT INTO `apto_order_configuration` (`surrogate_id`, `customer_id`, `product_id`, `name`, `created`, `state`, `id`) VALUES
 (1, 1, 48, NULL, '2018-08-09 12:47:02', '{\"class\":\"Apto\\\\Catalog\\\\Domain\\\\Core\\\\Model\\\\Configuration\\\\State\\\\State\",\"json\":{\"state\":{\"ec6e552f-f810-4f5a-8e1f-1b125748cadd\":{\"813dc11e-076d-4925-a2e9-f4d09db7520f\":true},\"48562933-fed0-46ea-bfec-713f2ed6e8bd\":{\"1c796d4a-dfa9-4474-ac67-9fce4818e7da\":true},\"b5a10157-0658-4c0a-bab8-e011447408d7\":{\"2bd98648-53bb-4912-a3fb-50fd0e58e5a6\":true},\"8b6f95cc-37ab-42ee-9278-9a10633a79d7\":{\"3e816ae2-13cf-49ff-9664-54bc1ebb5c8f\":true},\"6f19227d-54c2-4d1d-9b4b-1277133602ee\":{\"8c5dab1a-4fda-45f4-ac48-67320b72bffa\":true},\"da4433c1-c11a-42e9-afb0-401464f5d736\":{\"a388aca6-30b8-49ea-bad6-37566a16b07f\":true},\"3cbf6e24-4516-4407-872d-1ff8c3f63005\":{\"ada1fd18-2b5c-4711-bf45-20db2a2471a9\":{\"width\":25,\"height\":250}}}}}', '214d59d0-5c30-4ca0-92f7-763f47f789a6'),
 (2, 1, 48, NULL, '2018-08-09 12:47:02', '{\"class\":\"Apto\\\\Catalog\\\\Domain\\\\Core\\\\Model\\\\Configuration\\\\State\\\\State\",\"json\":{\"state\":{\"ec6e552f-f810-4f5a-8e1f-1b125748cadd\":{\"813dc11e-076d-4925-a2e9-f4d09db7520f\":true},\"48562933-fed0-46ea-bfec-713f2ed6e8bd\":{\"1c796d4a-dfa9-4474-ac67-9fce4818e7da\":true},\"8b6f95cc-37ab-42ee-9278-9a10633a79d7\":{\"3e816ae2-13cf-49ff-9664-54bc1ebb5c8f\":true},\"6f19227d-54c2-4d1d-9b4b-1277133602ee\":{\"8c5dab1a-4fda-45f4-ac48-67320b72bffa\":true},\"3cbf6e24-4516-4407-872d-1ff8c3f63005\":{\"ada1fd18-2b5c-4711-bf45-20db2a2471a9\":{\"width\":25,\"height\":250}}}}}', '9060da6e-356e-4cf8-86ec-25f0588de200');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `apto_password_reset`
+--
+
+DROP TABLE IF EXISTS `apto_password_reset`;
+CREATE TABLE `apto_password_reset` (
+  `surrogate_id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `id` char(36) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4319,22 +4334,24 @@ CREATE TABLE `apto_product_rule` (
   `error_message` longtext DEFAULT NULL COMMENT '(DC2Type:AptoPropertyTranslatedValue)',
   `conditions_operator` int(11) NOT NULL,
   `implications_operator` int(11) NOT NULL,
-  `soft_rule` tinyint(1) NOT NULL
+  `soft_rule` tinyint(1) NOT NULL,
+  `description` longtext NOT NULL,
+  `position_column` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `apto_product_rule`
 --
 
-INSERT INTO `apto_product_rule` (`surrogate_id`, `product_id`, `name`, `created`, `id`, `active`, `error_message`, `conditions_operator`, `implications_operator`, `soft_rule`) VALUES
-(29, 48, 'mit Rollokasten', '2018-03-01 12:14:33', 'a899d24c-0680-4aba-b408-ff2824f65952', 1, '[]', 0, 0, 0),
-(110, 88, 'rollofarbe', '2020-09-15 20:40:22', 'dce802da-556f-4f20-a0f0-236eece58e46', 0, '[]', 0, 0, 0),
-(112, 48, 'ohne Rollokasten', '2020-09-24 20:19:58', 'f1d6df9a-b77b-40a7-9116-69142ecefd43', 1, '[]', 0, 0, 0),
-(113, 91, 'Villa', '2021-11-15 11:19:26', '5336c9bc-a952-4e39-aa30-e7d73fc8403e', 1, '[]', 0, 0, 0),
-(114, 91, 'Einfamilienhaus', '2021-11-15 11:19:40', 'c7015731-3f69-432c-aa3a-9c36c90290f5', 1, '[]', 0, 0, 0),
-(115, 91, 'Mehrfamilienhaus', '2021-11-15 11:19:51', 'a0b2704a-8187-4ee7-815d-29503d387957', 1, '[]', 0, 0, 0),
-(116, 91, 'Flachdach', '2021-11-15 11:20:00', 'ae5dbf4f-f3c5-497b-9df1-7d453259c508', 1, '[]', 0, 0, 0),
-(117, 92, 'Paket Climber', '2021-11-15 13:19:06', '05ab32de-3b82-44ee-a63a-33db2dc550ee', 1, '{\"de_DE\":\"Das Paket \\\"climber\\\" ist nicht mit dem V8 Motor verwendbar. <br \\/>W\\u00e4hlen Sie einen V10 oder V12 Motor!\"}', 0, 0, 0);
+INSERT INTO `apto_product_rule` (`surrogate_id`, `product_id`, `name`, `created`, `id`, `active`, `error_message`, `conditions_operator`, `implications_operator`, `soft_rule`, `description`, `position_column`) VALUES
+(29, 48, 'mit Rollokasten', '2018-03-01 12:14:33', 'a899d24c-0680-4aba-b408-ff2824f65952', 1, '[]', 0, 0, 0, '', 0),
+(110, 88, 'rollofarbe', '2020-09-15 20:40:22', 'dce802da-556f-4f20-a0f0-236eece58e46', 0, '[]', 0, 0, 0, '', 0),
+(112, 48, 'ohne Rollokasten', '2020-09-24 20:19:58', 'f1d6df9a-b77b-40a7-9116-69142ecefd43', 1, '[]', 0, 0, 0, '', 0),
+(113, 91, 'Villa', '2021-11-15 11:19:26', '5336c9bc-a952-4e39-aa30-e7d73fc8403e', 1, '[]', 0, 0, 0, '', 0),
+(114, 91, 'Einfamilienhaus', '2021-11-15 11:19:40', 'c7015731-3f69-432c-aa3a-9c36c90290f5', 1, '[]', 0, 0, 0, '', 0),
+(115, 91, 'Mehrfamilienhaus', '2021-11-15 11:19:51', 'a0b2704a-8187-4ee7-815d-29503d387957', 1, '[]', 0, 0, 0, '', 0),
+(116, 91, 'Flachdach', '2021-11-15 11:20:00', 'ae5dbf4f-f3c5-497b-9df1-7d453259c508', 1, '[]', 0, 0, 0, '', 0),
+(117, 92, 'Paket Climber', '2021-11-15 13:19:06', '05ab32de-3b82-44ee-a63a-33db2dc550ee', 1, '{\"de_DE\":\"Das Paket \\\"climber\\\" ist nicht mit dem V8 Motor verwendbar. <br \\/>W\\u00e4hlen Sie einen V10 oder V12 Motor!\"}', 0, 0, 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -5565,6 +5582,14 @@ ALTER TABLE `apto_order_configuration`
   ADD KEY `AptoSearchId` (`id`);
 
 --
+-- Indexes for table `apto_password_reset`
+--
+ALTER TABLE `apto_password_reset`
+  ADD PRIMARY KEY (`surrogate_id`),
+  ADD UNIQUE KEY `UNIQ_B5B268785F37A13B` (`token`),
+  ADD UNIQUE KEY `AptoUniqueEmailToken` (`email`,`token`);
+
+--
 -- Indexes for table `apto_plugin_frontend_user`
 --
 ALTER TABLE `apto_plugin_frontend_user`
@@ -6292,6 +6317,12 @@ ALTER TABLE `apto_media_file`
 --
 ALTER TABLE `apto_order_configuration`
   MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `apto_password_reset`
+--
+ALTER TABLE `apto_password_reset`
+  MODIFY `surrogate_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `apto_plugin_frontend_user`
