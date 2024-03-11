@@ -1,0 +1,237 @@
+@use '@angular/material' as mat;
+
+@import '@angular/cdk/overlay-prebuilt.css';
+@import "globals";
+@import "common";
+
+apto-frontend,
+.cdk-overlay-container {
+    mat-card {
+        display: flex !important;
+    }
+
+    a:not(.mat-button-base) {
+        color: var(--color-text) !important;
+    }
+
+    .cdk-overlay-pane {
+        max-height: 80vh;
+    }
+
+    .mat-paginator {
+        background-color: transparent !important;
+    }
+
+    .loading-button .mat-button-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .mat-menu-panel {
+        margin: 8px;
+    }
+
+    mat-select {
+        padding-bottom: 3px;
+    }
+
+    mat-sidenav-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mat-drawer-inner-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    mat-sidenav {
+        width: 200px;
+    }
+
+    $typography: mat.define-typography-config(
+        $font-family: var(--main-font-1),
+        $display-4: mat.define-typography-level(1rem, 1.3em, 400),
+        $display-3: mat.define-typography-level(1rem, 1.3em, 000),
+        $display-2: mat.define-typography-level(1rem, 1.3em, 400),
+        $display-1: mat.define-typography-level(1rem, 1.3em, 400),
+        $headline: mat.define-typography-level(2rem, 1.3em, 400),
+        $title: mat.define-typography-level(1.5rem, 1.3em, 600),
+        $subheading-2: mat.define-typography-level(1.3rem, 1.3em, 400),
+        $subheading-1: mat.define-typography-level(1.1rem, 1.3em, 400),
+        $body-1: mat.define-typography-level(0.9rem, 1.3em, 400),
+        $body-2: mat.define-typography-level(1rem, 1.3em, 600),
+        $caption: mat.define-typography-level(0.9rem, 1.3em, 400),
+        $button: mat.define-typography-level(1rem, 1.3em, 400),
+        $input: mat.define-typography-level(1rem, 1.3em, 400),
+    );
+
+    .mat-typography .mat-display-4,
+    .mat-typography .mat-display-3,
+    .mat-typography .mat-display-2,
+    .mat-typography .mat-display-1,
+    .mat-typography .mat-headline,
+    .mat-typography .mat-title,
+    .mat-typography .mat-subheading-2,
+    .mat-typography .mat-subheading-1,
+    .mat-typography .mat-body-1,
+    .mat-typography .mat-body-2,
+    .mat-typography h1,
+    .mat-typography h2,
+    .mat-typography h3,
+    .mat-typography h4,
+    .mat-typography h5,
+    .mat-typography h6 {
+        margin-bottom: 0 !important;
+    }
+
+    .mat-menu-content:not(:empty) {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    $primary: (
+        500: var(--color-primary),
+        contrast: (
+            500: #ffffff,
+        ),
+    );
+    $accent: (
+        500: var(--color-accent),
+        contrast: (
+            500: var(--color-accent-contrast),
+        ),
+    );
+    $warn: (
+        500: var(--color-warn),
+        contrast: (
+            500: var(--color-accent-contrast),
+        ),
+    );
+
+    $theme: mat.define-light-theme(
+            (
+                color: (
+                    primary: mat.define-palette($primary, 500, 500, 500, 500),
+                    accent: mat.define-palette($accent, 500, 500, 500),
+                    warn: mat.define-palette($warn, 500, 500, 500),
+                ),
+                typography: $typography,
+            )
+    );
+
+    @include mat.all-component-themes($theme);
+
+    @include mat.core($typography);
+
+    button.mat-flat-button,
+    a.mat-flat-button {
+        font-family: var(--main-font-1);
+        font-weight: 500;
+        font-size: 12px;
+        box-shadow: var(--box-shadow);
+        border-radius: var(--border-radius-button) !important;
+        padding: 0 20px !important;
+        height: var(--button-mobile-height);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+
+        &.mat-primary {
+            &:hover:not(.mat-button-disabled) {
+                background-color: var(--color-primary-hover);
+                transition: background-color 0.3s ease;
+            }
+        }
+
+        &.mat-accent {
+            &:hover:not(.mat-button-disabled) {
+                background-color: rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+            }
+        }
+    }
+
+    .mat-dialog-container {
+        padding: 0;
+        overflow: unset;
+        border-radius: var(--border-radius-card);
+    }
+
+    // accordion element
+    .mat-expansion-panel {
+        &.mat-expanded {
+            mat-panel-title {
+                font-weight: 700;
+                font-size: 18px;
+                color: var(--color-accent-contrast);
+            }
+        }
+        .mat-expansion-panel-content {
+            .mat-expansion-panel-body {
+                padding: 0 30px 16px;
+            }
+        }
+        .mat-expansion-panel-header {
+            padding: 0 30px;
+            height: 50px;
+            .mat-expansion-indicator {
+                &:after {
+                    margin-top: -5px;
+                }
+            }
+        }
+        &.mat-expansion-panel-spacing {
+            margin: 0;
+        }
+    }
+
+    .mat-radio-label {
+        .mat-radio-label-content {
+            @include cut-long-text();
+        }
+    }
+
+    .mat-checkbox-multiline-label {
+        .mat-checkbox-layout {
+            white-space: normal;
+            align-items: flex-start;
+            font-size: 13px;
+        }
+
+        .mat-checkbox-inner-container {
+            margin-top: 0;
+            margin-right: 10px;
+        }
+    }
+
+    @media only screen and (min-width: $mobile-max-width) {
+        button.mat-flat-button,
+        a.mat-flat-button {
+            height: var(--button-tablet-height);
+            font-size: 15px;
+        }
+    }
+
+    @media only screen and (min-width: $tablet-max-width) {
+        button.mat-flat-button,
+        a.mat-flat-button  {
+            font-family: var(--main-font-1);
+            font-weight: 600;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius-button) !important;
+            height: var(--input-big-height);
+            padding: 0 35px !important;
+        }
+
+        .one-page:not(.open-in-dialog) {
+            button.mat-flat-button,
+            a.mat-flat-button  {
+                height: var(--button-tablet-height);
+            }
+        }
+    }
+}

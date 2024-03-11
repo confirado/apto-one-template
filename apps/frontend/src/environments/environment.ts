@@ -6,6 +6,7 @@ import { parameters } from "apps-build/parameters/local";
 export const environment = {
   production: false,
   api: window.APTO_API,
+  aptoInline: window.AptoInline,
   ...parameters
 };
 
