@@ -1,3 +1,7 @@
 apto_base_bundle:
     resource: '@AptoBaseBundle/Resources/config/routing/'
     type: directory
+
+apto_plugin_import_export_bundle:
+    resource: '@ImportExportBundle/Resources/config/routing/'
+    type: directory

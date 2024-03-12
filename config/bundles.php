@@ -29,4 +29,5 @@ return [
     Apto\Plugins\ImageUpload\Infrastructure\ImageUploadBundle\ImageUploadBundle::class => ['all' => true],
     Apto\Plugins\PartsList\Infrastructure\AptoPartsListBundle\AptoPartsListBundle::class => ['all' => true],
     Apto\Plugins\FrontendUsers\Infrastructure\FrontendUsersBundle\FrontendUsersBundle::class => ['all' => true],
+    Apto\Plugins\ImportExport\Infrastructure\ImportExportBundle\ImportExportBundle::class => ['all' => true],
 ];
