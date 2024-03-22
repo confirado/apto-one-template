@@ -8,8 +8,10 @@
     grid-template-areas:
             "header"
             "picture"
-            "element"
             "description"
+            "attachment"
+            "element"
+            "extra-item"
             "buttons";
     padding: var(--element-gap);
     justify-items: center;
@@ -21,7 +23,9 @@
         grid-template-areas:
             "picture header"
             "picture description"
+            "picture attachment"
             "picture element"
+            "picture extra-item"
             "picture buttons";
 
         grid-template-columns: calc(var(--image-tablet-width) + 2*var(--element-gap)) 1fr;
@@ -32,7 +36,9 @@
             "header"
             "picture"
             "description"
+            "attachment"
             "element"
+            "extra-item"
             "buttons";
 
             grid-template-columns: 1fr;
@@ -71,15 +77,19 @@
         @if ($screen-size == 'mobile') {
             grid-template-areas:
                     "picture"
-                    "element"
                     "description"
+                    "attachment"
+                    "element"
+                    "extra-item"
                     "buttons";
         }
 
         @if ($screen-size == 'tablet' or $screen-size == 'desktop') {
             grid-template-areas:
                     "picture description"
+                    "picture attachment"
                     "picture element"
+                    "picture extra-item"
                     "picture buttons";
 
             grid-template-columns: calc(var(--image-one-page-width) + 2*var(--element-gap)) 1fr;
@@ -90,7 +100,9 @@
             "header"
             "picture"
             "description"
+            "attachment"
             "element"
+            "extra-item"
             "buttons";
 
             grid-template-columns: 1fr;
