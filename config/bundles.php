@@ -30,4 +30,5 @@ return [
     Apto\Plugins\PartsList\Infrastructure\AptoPartsListBundle\AptoPartsListBundle::class => ['all' => true],
     Apto\Plugins\FrontendUsers\Infrastructure\FrontendUsersBundle\FrontendUsersBundle::class => ['all' => true],
     Apto\Plugins\ImportExport\Infrastructure\ImportExportBundle\ImportExportBundle::class => ['all' => true],
+    Apto\Plugins\PartsListElement\Infrastructure\PartsListElementBundle\PartsListElementBundle::class => ['all' => true],
 ];
