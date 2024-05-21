@@ -131,4 +131,5 @@ read EXECUTE_DB_QUERIES
 if [ ${EXECUTE_DB_QUERIES} = "y" ];
 then
   ${PHP_EXECUTABLE} bin/console doctrine:schema:update --force
+  ${PHP_EXECUTABLE} bin/console apto:migrate:custom-properties-uuids
 fi

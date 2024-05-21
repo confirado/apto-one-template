@@ -129,4 +129,5 @@ read EXECUTE_DB_QUERIES
 if [ ${EXECUTE_DB_QUERIES} = "y" ];
 then
   php bin/console doctrine:schema:update --force
+  php bin/console apto:migrate:custom-properties-uuids
 fi

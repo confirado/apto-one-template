@@ -38,6 +38,7 @@ docker-compose --env-file .env.docker up -d --build
 echo "composer install"
 docker-compose --env-file .env.docker run --rm apto-apache-service composer install
 docker-compose --env-file .env.docker run --rm apto-apache-service php bin/console doctrine:schema:update --force
+docker-compose --env-file .env.docker run --rm apto-apache-service php bin/console apto:migrate:custom-properties-uuids --force
 
 echo "npm install and build"
 docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'npm install && npm run local-frontend'
