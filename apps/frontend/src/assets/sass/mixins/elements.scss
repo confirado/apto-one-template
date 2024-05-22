@@ -263,6 +263,7 @@
 
 @mixin header($screen-size: 'mobile') {
     display: flex;
+    flex-direction: column;
 
     @if ($screen-size == 'mobile') {
         justify-content: center;
