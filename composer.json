@@ -1,6 +1,6 @@
 {
     "name": "apto-one/template",
-    "version": "2.1.122",
+    "version": "2.1.123",
     "repositories": {
         "apto-one-core": {
           "type": "vcs",
