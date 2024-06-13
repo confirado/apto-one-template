@@ -8,6 +8,7 @@ declare global {
   interface Window {
     APTO_API: AptoApi;
     AptoInline: AptoInline;
+    PluginManager: PluginManager;
   }
 }
 
@@ -30,6 +31,10 @@ interface AptoInline {
     swProductId: string;
     swProductUrl: string;
   };
+}
+
+interface PluginManager {
+  getPluginInstances(pluginName: string): any[];
 }
 
 if (environment.production) {

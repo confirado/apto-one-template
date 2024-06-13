@@ -4,5 +4,6 @@ export const environment = {
   production: true,
   api: window.APTO_API,
   aptoInline: window.AptoInline,
+  pluginManager: window.PluginManager,
   ...parameters
 };
