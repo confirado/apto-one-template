@@ -1,10 +1,9 @@
 @import "form-inputs";
 @import 'mat_overwrite-inline';
 @import 'fonts-inline';
-@import 'tailwindcss/base';
-@import 'tailwindcss/utilities';
 
-:root {
+:root,
+.cdk-overlay-container {
     --main-font-1: 'Montserrat', sans-serif;
 
     --primary-lighter: #80befa;
@@ -86,8 +85,25 @@
 
 apto-frontend,
 .cdk-overlay-container {
+    .container{
+        --bs-gutter-x: 0;
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            margin-left: auto;
+        }
+    }
+
     font-family: var(--main-font-1);
-    background-color: var(--color-background);
+
+    .overlay{
+        min-width: 210px;
+    }
 
     * {
         box-sizing: border-box;
