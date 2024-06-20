@@ -114,9 +114,9 @@ COMPOSER_MEMORY_LIMIT=-1 composer install
 
 # npm install
 echo "npm install"
-npm install
+npm ci
 cd _client-deprecated_
-npm install
+npm ci
 cd ..
 
 # update database

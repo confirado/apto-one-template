@@ -41,5 +41,5 @@ docker-compose --env-file .env.docker run --rm apto-apache-service php bin/conso
 docker-compose --env-file .env.docker run --rm apto-apache-service php bin/console apto:migrate:custom-properties-uuids --force
 
 echo "npm install and build"
-docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'npm install && npm run local-frontend'
-docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'cd _client-deprecated_ && npm install && npm run local-backend'
+docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'npm ci && npm run local-frontend'
+docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'cd _client-deprecated_ && npm ci && npm run local-backend'
