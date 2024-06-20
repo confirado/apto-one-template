@@ -39,5 +39,5 @@ rm -Rf _client-deprecated_/src-tmp
 # create zip
 cd ..
 rm install-latest.zip
-zip -r install-latest.zip install-latest
+zip -rq install-latest.zip install-latest
 rm -Rf install-latest

@@ -40,8 +40,8 @@ cd apto-one-template
 
 4. Install npm packages
 ```
-npm install
-npm install --prefix _client-deprecated_
+npm ci
+npm ci --prefix _client-deprecated_
 ```
 5. Run local npm scripts
 ```
