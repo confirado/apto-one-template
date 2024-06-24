@@ -37,7 +37,6 @@ yarn-error.log
 
 # npm
 .npm
-/package-lock.json
 
 # angular
 /.angular
@@ -87,7 +86,6 @@ yarn-error.log
 ###> client deprecated ###
 /_client-deprecated_/node_modules/
 /_client-deprecated_/src-tmp/*
-/_client-deprecated_/package-lock.json
 /_client-deprecated_/_only_needed_for_versions_composer.lock
 
 /_client-deprecated_/client/config/*

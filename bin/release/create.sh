@@ -20,12 +20,12 @@ echo "composer install"
 COMPOSER_MEMORY_LIMIT=-1 composer install --no-scripts
 
 # npm install
-npm install
+npm ci
 npm run live-frontend
 npm run install-frontend
 
 cd _client-deprecated_
-npm install
+npm ci
 npm run live-backend
 cd ..
 
@@ -39,5 +39,5 @@ rm -Rf _client-deprecated_/src-tmp
 # create zip
 cd ..
 rm install-latest.zip
-zip -r install-latest.zip install-latest
+zip -rq install-latest.zip install-latest
 rm -Rf install-latest

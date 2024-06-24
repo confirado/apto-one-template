@@ -9,6 +9,7 @@ declare global {
     APTO_API: AptoApi;
     AptoInline: AptoInline;
     PluginManager: PluginManager;
+    AptoFrontendLocale: string;
   }
 }
 
