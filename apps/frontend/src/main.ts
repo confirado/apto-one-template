@@ -8,7 +8,8 @@ declare global {
   interface Window {
     APTO_API: AptoApi;
     AptoInline: AptoInline;
-    PluginManager: PluginManager;
+    PluginManager: Sw6PluginManager;
+    router: Sw6Router;
     AptoFrontendLocale: string;
   }
 }
@@ -34,8 +35,12 @@ interface AptoInline {
   };
 }
 
-interface PluginManager {
+interface Sw6PluginManager {
   getPluginInstances(pluginName: string): any[];
+}
+
+interface Sw6Router {
+  'frontend.cart.offcanvas': string
 }
 
 if (environment.production) {
