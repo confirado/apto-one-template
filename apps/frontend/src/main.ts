@@ -8,6 +8,7 @@ declare global {
   interface Window {
     APTO_API: AptoApi;
     AptoInline: AptoInline;
+    AptoFrontendLocale: string;
   }
 }
 
