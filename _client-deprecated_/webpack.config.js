@@ -27,6 +27,7 @@ const aptoCopyClientCollector = new (require('./client/apto.client-collector'))(
     path.join(__dirname, 'src/'),
     path.join(__dirname, '../src/'),
     path.join(__dirname, '../src-deprecated/'),
+    path.join(__dirname, '../vendor/apto-plugin/'),
     path.join(__dirname, '../vendor/apto-one/')
 ]);
 
