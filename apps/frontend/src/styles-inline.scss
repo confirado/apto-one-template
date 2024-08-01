@@ -115,6 +115,15 @@ apto-frontend,
         margin: 0;
     }
 
+    apto-sbs-elements .headline,
+    .element-inner {
+        .description {
+            p {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
     .bg-primary-dark {
         background-color: var(--primary-dark) !important;
         color: white !important;
