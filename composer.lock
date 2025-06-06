@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "899bc6b789c0f9f8163f0aaf28455aa4",
+    "content-hash": "fbce9f94dd8f8e227bd4d4e503b76a05",
     "packages": [
         {
             "name": "apto-one/core",
