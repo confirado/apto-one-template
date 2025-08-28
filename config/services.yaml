@@ -17,6 +17,8 @@ parameters:
     thumb_relative_path: '%public_folder%/public/thumbs'
     cache_directory: '%kernel.project_dir%/web/public/cache'
     cache_relative_path: '%public_folder%/public/cache'
+    assets_directory: '%kernel.project_dir%/web/public/assets'
+    assets_relative_path: '%public_folder%/public/assets'
 
 imports:
     - { resource: parameters.yaml }
