@@ -196,4 +196,20 @@ pre {
     }
 }
 
+.apto-file-drop-zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    text-align: center;
+    border: 2px dashed #888 !important;
+    border-radius: var(--border-radius) !important;
+    color: #888;
+    cursor: pointer;
+}
+
+.apto-file-drop-content {
+    color: #888;
+}
+
 @import "../../../templates/app/styles";
