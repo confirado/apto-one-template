@@ -444,6 +444,9 @@ Apache-2.0
    END OF TERMS AND CONDITIONS
 
 
+ngx-file-drop
+MIT
+
 ngx-pipes
 MIT
 
