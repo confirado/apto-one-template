@@ -848,7 +848,9 @@ INSERT INTO `apto_content_snippet` (`surrogate_id`, `parent_id`, `created`, `nam
 (294, 290, '2021-11-25 14:02:28', 'iconClass', 1, '{\"de_DE\":\"fa-facebook-square\"}', '04b3699e-93f4-4a9c-9069-af0b73dc1494', 0),
 (295, 291, '2021-11-25 14:02:34', 'iconClass', 1, '{\"de_DE\":\"fa-twitter\"}', 'f7e8ea20-dc75-45c1-9f41-0e554a2db56e', 0),
 (296, 290, '2021-11-25 14:02:42', 'target', 1, '{\"de_DE\":\"_blank\"}', 'b55e2df1-3d4f-40b0-a7cd-50c60fa6c7a4', 0),
-(297, 291, '2021-11-25 14:02:55', 'target', 1, '{\"de_DE\":\"_blank\"}', 'b73c4182-4570-400d-b7be-d5a7d3ef5d2d', 0);
+(297, 291, '2021-11-25 14:02:55', 'target', 1, '{\"de_DE\":\"_blank\"}', 'b73c4182-4570-400d-b7be-d5a7d3ef5d2d', 0),
+(298, NULL, '2025-09-12 15:12:53', 'aptoProductList', 1, '[]', '017f1ac2-7c4e-4447-952b-1c9055be2153', 0),
+(299, 298, '2025-09-12 15:13:30', 'filterTitle', 1, '{\"de_DE\":\"Kategorien\"}', 'fad34c2a-da06-451a-9b07-2c3bc79baae5', 0);
 
 -- --------------------------------------------------------
 

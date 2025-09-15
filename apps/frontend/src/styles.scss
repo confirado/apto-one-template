@@ -76,7 +76,7 @@
     --image-tablet-width: 114px;
     --image-one-page-width: 100px;
 
-    --one-page-img-size: 100px;
+    --one-page-img-size: 64px;
     --dropdown-icon-width: 36px;
     --clear-icon-width: 40px;
 
@@ -210,6 +210,15 @@ pre {
 
 .apto-file-drop-content {
     color: #888;
+}
+
+.cdk-overlay-pane {
+    max-height: 80vh;
+}
+
+.cdk-overlay-container .mat-dialog-container {
+    overflow-y: scroll !important;
+    scrollbar-width: none;
 }
 
 @import "../../../templates/app/styles";
