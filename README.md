@@ -1,5 +1,5 @@
 <p align='center'><a href="https://apto.one/" target="_blank" rel="noopener noreferrer">
-    <img width="250" src="https://www.confirado.de/files/images/confirado/logos/Apto.ONE/logo_apto_blau_gr%C3%BCn.png">
+    <img width="150" src="https://forum.apto.one/uploads/default/original/1X/60c90d4cc2d1f8f6ed5d29de35c7dcfb93d40bdf.png">
 </a></p>
 
 ## Apto.ONE is build up of the following components:
