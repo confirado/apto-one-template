@@ -32,14 +32,14 @@ DATABASE_URL='mysqli://apto:apto@apto-mariadb-service:3306/apto?serverVersion=ma
 APTO_CLIENT_ENVIRONMENT='local'" > .env.local
 
 echo "building docker"
-docker-compose --env-file .env.docker down
-docker-compose --env-file .env.docker up -d --build
+docker compose --env-file .env.docker down
+docker compose --env-file .env.docker up -d --build
 
 echo "composer install"
-docker-compose --env-file .env.docker run --rm apto-apache-service composer install
-docker-compose --env-file .env.docker run --rm apto-apache-service php bin/console doctrine:schema:update --force
-docker-compose --env-file .env.docker run --rm apto-apache-service php bin/console apto:migrate:custom-properties-uuids --force
+docker compose --env-file .env.docker run --rm apto-apache-service composer install
+docker compose --env-file .env.docker run --rm apto-apache-service php bin/console doctrine:schema:update --force
+docker compose --env-file .env.docker run --rm apto-apache-service php bin/console apto:migrate:custom-properties-uuids --force
 
 echo "npm install and build"
-docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'npm ci && npm run local-frontend'
-docker-compose --env-file .env.docker run --rm apto-node-service sh -c 'cd _client-deprecated_ && npm ci && npm run local-backend'
+docker compose --env-file .env.docker run --rm apto-node-service sh -c 'npm ci && npm run local-frontend'
+docker compose --env-file .env.docker run --rm apto-node-service sh -c 'cd _client-deprecated_ && npm ci && npm run local-backend'
