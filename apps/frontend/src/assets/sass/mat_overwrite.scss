@@ -49,7 +49,7 @@ mat-sidenav {
     width: 200px;
 }
 
-$typography: mat.define-typography-config(
+$typography: mat.define-legacy-typography-config(
     $font-family: var(--main-font-1),
     $display-4: mat.define-typography-level(1rem, 1.3em, 400),
     $display-3: mat.define-typography-level(1rem, 1.3em, 000),
@@ -120,9 +120,9 @@ $theme: mat.define-light-theme(
         )
 );
 
-@include mat.all-component-themes($theme);
 
-@include mat.core($typography);
+@include mat.legacy-core();
+@include mat.all-legacy-component-themes($theme);
 
 button.mat-flat-button,
 a.mat-flat-button {

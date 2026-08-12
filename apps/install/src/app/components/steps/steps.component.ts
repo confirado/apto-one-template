@@ -7,7 +7,7 @@ import {
   MailDeliveryResult, UpdateConfigResult, FinishInstallationResult, Config, FinishInstallation, SuccessResult,
 } from '../../services/install.service';
 import { MatStepper } from '@angular/material/stepper';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar, MatLegacySnackBarHorizontalPosition as MatSnackBarHorizontalPosition, MatLegacySnackBarVerticalPosition as MatSnackBarVerticalPosition } from '@angular/material/legacy-snack-bar';
 
 interface HidePasswords {
   database: boolean
