@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
-@include mat.core();
+
+@include mat.legacy-core();
+@include mat.all-legacy-component-typographies();
 
 $dark-primary-text: rgba(black, 0.87);
 $light-primary-text: white;
@@ -82,7 +84,7 @@ $apto-theme: mat.define-light-theme((
     )
 ));
 
-@include mat.all-component-themes($apto-theme);
+@include mat.all-legacy-component-themes($apto-theme);
 
 .mat-step-header.cdk-program-focused {
     background-color: transparent;
