@@ -276,6 +276,12 @@
             "styles": [
               "apps/frontend/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/frontend/src/assets/sass",
+                "apps/frontend/src/assets/sass/mixins"
+              ]
+            },
             "scripts": []
           }
         }

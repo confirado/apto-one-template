@@ -25,6 +25,9 @@
     "test": "ng test"
   },
   "private": true,
+  "engines": {
+    "node": ">=18.20.8 <19"
+  },
   "dependencies": {
     "@angular-material-components/color-picker": "^15.0.0",
     "@angular-material-components/file-input": "^15.0.0",
