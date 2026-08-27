@@ -1,4 +1,5 @@
 import { defineConfig } from "cypress";
+import { resolve } from "node:path";
 
 let path = 'vendor/apto-one/core/Tests/';
 let componentTestPath = 'vendor/apto-one/core/Client/';
@@ -45,6 +46,23 @@ export default defineConfig({
     devServer: {
       framework: "angular",
       bundler: "webpack",
+      options: {
+        projectConfig: {
+          root: '',
+          sourceRoot: 'apps/frontend/src',
+          buildOptions: {
+            styles: ['apps/frontend/src/styles.scss'],
+            polyfills: ['zone.js'],
+            tsConfig: 'apps/frontend/tsconfig.spec.json',
+            stylePreprocessorOptions: {
+              includePaths: [
+                resolve('apps/frontend/src/assets/sass'),
+                resolve('apps/frontend/src/assets/sass/mixins'),
+              ],
+            },
+          },
+        },
+      },
     },
     specPattern: componentTestPath + '**/*.cy.ts',
     indexHtmlFile: path + '/cypress/_support/component-index.html',

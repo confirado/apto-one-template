@@ -14,7 +14,6 @@ import { NgModule } from '@angular/core';
     // SomeComponentYouWantToRenderContent,
   ],
   exports: [],
-  entryComponents: [],
   imports: [],
   providers: []
 })
